@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>陣列進階操作 map()</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/02-14.css" />
+  </head>
+  <body>
+    <div id="app">
+      <ul class="tit bgcolor">
+        <li>名字 + 性別</li>
+      </ul>
+      <div class="itemList">
+        <ul id="itemBox" class="tit">
+          <li>小豬</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const arr = [
+        {
+          name: "遊戲",
+          sex: "boy",
+        },
+        {
+          name: "幸子",
+          sex: "girl",
+        },
+        {
+          name: "城之內",
+          sex: "boy",
+        },
+        {
+          name: "海馬",
+          sex: "boy",
+        },
+        {
+          name: "本田",
+          sex: "boy",
+        },
+      ];
+
+      // ["小豬boy", "小烏龜girl", "小鳥boy", "小貓boy", "小狗boy"]
+
+      const forArr = arr.map((obj) => {
+        return obj.name + obj.sex;
+      });
+
+      let html = "";
+      forArr.forEach((obj) => {
+        html += `<li>${obj}</li>`;
+      });
+
+      const itemBox = document.querySelector("#itemBox");
+      itemBox.innerHTML = html;
+    </script>
+  </body>
+</html>

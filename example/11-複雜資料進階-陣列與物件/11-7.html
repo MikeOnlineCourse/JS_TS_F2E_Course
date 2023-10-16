@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>陣列進階操作 forEach()</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/02-11.css" />
+  </head>
+  <body>
+    <div id="app">
+      <ul class="tit_select">
+        <li></li>
+        <li>
+          <select id="user_money">
+            <option value="0">選擇錢</option>
+            <option value="300">大於300</option>
+            <option value="700">大於700</option>
+            <option value="10000">大於10000</option>
+          </select>
+        </li>
+        <li>
+          <select id="user_age">
+            <option value="0">選擇年齡</option>
+            <option value="10">10歲以上</option>
+            <option value="20">20歲以上</option>
+            <option value="30">30歲以上</option>
+          </select>
+        </li>
+        <li>
+          <select id="user_sex">
+            <option value="no">選擇性別</option>
+            <option value="boy">boy</option>
+            <option value="girl">girl</option>
+          </select>
+        </li>
+      </ul>
+      <ul class="tit">
+        <li>名字</li>
+        <li>戶頭錢</li>
+        <li>年齡</li>
+        <li>性別</li>
+      </ul>
+      <div class="itemList">
+        <!-- <ul class="tit2">
+                <li>小豬</li>
+                <li>12000</li>
+                <li>12</li>
+                <li>boy</li>
+            </ul> -->
+      </div>
+    </div>
+
+    <script src="./js/data.js"></script>
+    <script>
+      const itemList = document.querySelector(".itemList");
+      const user_money = document.querySelector("#user_money");
+      const user_age = document.querySelector("#user_age");
+      const user_sex = document.querySelector("#user_sex");
+      let html = "";
+      const newData = data;
+
+      //畫面渲染
+      function DOMReader(arr) {
+        html = "";
+        itemList.innerHTML = "";
+        arr.forEach((obj) => {
+          html += `
+            <ul class="tit2">
+                <li>${obj.name}</li>
+                <li>${obj.money}</li>
+                <li>${obj.age}</li>
+                <li>${obj.sex}</li>
+            </ul>
+          `;
+        });
+        itemList.innerHTML = html;
+      }
+
+      // 選擇錢的處理
+      function userMoney(value) {
+        const m = Number(value);
+        const arr = [];
+        newData.forEach((obj) => {
+          if (obj.money > m) {
+            arr.push(obj);
+          }
+        });
+        DOMReader(arr);
+      }
+
+      // 選擇年齡的處理
+      function userAge(value) {
+        const m = Number(value);
+        const arr = [];
+        newData.forEach((obj) => {
+          if (obj.age > m) {
+            arr.push(obj);
+          }
+        });
+        DOMReader(arr);
+      }
+
+      // 選擇性別的處理
+      function userSex(value) {
+        const arr = [];
+        newData.forEach((obj) => {
+          if (obj.sex === value) {
+            arr.push(obj);
+          }
+          if (value === "no") {
+            arr.push(obj);
+          }
+        });
+        DOMReader(arr);
+      }
+
+      user_money.addEventListener("change", (e) => {
+        userMoney(e.target.value);
+      });
+      user_age.addEventListener("change", (e) => {
+        userAge(e.target.value);
+      });
+      user_sex.addEventListener("change", (e) => {
+        userSex(e.target.value);
+      });
+
+      DOMReader(newData);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>innerHTML & innerText</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/05-10.css" />
+  </head>
+  <body>
+    <div id="app">
+      <a id="Btn" href="javascript:;">關於TheCodingPro</a>
+      <p id="tit"></p>
+    </div>
+    <script>
+      const title = document.querySelector("#tit");
+      const txt = `TheCodingPro 是 Mike 所創立的<a href='https://thecodingpro.com/' target='_blcnk'>線上課程學院</a>，主要以網頁前端為主軸，開設 JavaScript、HTML、CSS、Vue 等業界常見的技能，幫助初學者在學習的過程中找到自信心，也對學習寫程式感到有興趣，更重要的是可以真正學會如何解決問題，而不是只會照範例寫 code 而已。`;
+
+      document.querySelector("#Btn").addEventListener("click", function () {
+        // title.innerText = txt;
+        title.innerHTML = txt;
+      });
+    </script>
+  </body>
+</html>

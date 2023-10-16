@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>字串模板</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/bg.css" />
+  </head>
+  <body>
+    <img id="logo" src="../images/logo1.png" alt="" />
+    <script>
+      const name = "Mike";
+      const age = 12;
+
+      const newText = `我的名字叫${name}，我今年${age}歲`;
+      console.log("newText:", newText);
+
+      // 以前的用法
+      const oldText = "我的名字叫" + name + "，我今年" + age + "歲";
+      console.log("oldText:", oldText);
+    </script>
+  </body>
+</html>

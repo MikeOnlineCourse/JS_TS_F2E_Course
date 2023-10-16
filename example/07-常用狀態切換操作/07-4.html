@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>選取狀態切換</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/07-4.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <img id="logo" src="../images/logo2.png" alt="" />
+        <ul class="navBox">
+          <li><a id="n1" class="nav active">首頁 > </a></li>
+          <li><a id="n2" class="nav">關於我們 > </a></li>
+          <li><a id="n3" class="nav">連絡客服 > </a></li>
+          <li><a id="n4" class="nav">最新課程 > </a></li>
+          <li><a id="n5" class="nav">最新消息 > </a></li>
+          <li><a id="n6" class="nav">課程公告 > </a></li>
+          <li><a id="n7" class="nav">成為老師 > </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const navBtn = document.querySelectorAll(".nav");
+
+      // for (let i = 0; i < navBtn.length; i++) {
+      //   navBtn[i].addEventListener("click", menuClcik);
+      // }
+      // const menuClcik = (e) => {
+      //   for (let s = 0; s < navBtn.length; s++) {
+      //     navBtn[s].classList.remove("active");
+      //   }
+      //   e.target.classList.add("active");
+      // };
+
+      for (let i = 0; i < navBtn.length; i++) {
+        navBtn[i].addEventListener("click", (e) => {
+          for (let s = 0; s < navBtn.length; s++) {
+            navBtn[s].classList.remove("active");
+          }
+          e.target.classList.add("active");
+        });
+      }
+    </script>
+  </body>
+</html>

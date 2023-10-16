@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>什麼是物件?</title>
+  </head>
+  <body>
+    <a id="alink" href="javascript:;" target="_blank">超連結標籤</a>
+
+    <script>
+      const obj1 = {};
+
+      console.log(obj1);
+
+      const obj2 = {
+        name: "mike",
+        salary: "22000",
+      };
+
+      console.log(obj2);
+      console.log(obj2.name);
+      console.log(obj2.salary);
+
+      const dom = document.querySelector("#alink");
+
+      console.log(dom.id);
+      console.log(dom.href);
+      console.log(dom.target);
+    </script>
+  </body>
+</html>

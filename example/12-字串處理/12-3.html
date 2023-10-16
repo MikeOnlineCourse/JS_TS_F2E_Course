@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>變換英文字母大小寫</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div>
+      <h1>請輸入老師的英文名字</h1>
+      <input id="searchBar" type="text" />
+      <button id="submit">送出</button>
+    </div>
+
+    <script>
+      // toLocaleLowerCase 大寫轉小寫
+      // toLocaleUpperCase 小寫轉大寫
+
+      const searchBar = document.querySelector("#searchBar");
+      const submit = document.querySelector("#submit");
+
+      submit.addEventListener("click", () => {
+        const value = searchBar.value.trim();
+        const tlc = value.toLocaleLowerCase();
+        if (tlc === "") {
+          alert("欄位不可以空白");
+          return;
+        }
+        if (tlc === "mike") {
+          alert("成功");
+        }
+        console.log(tlc);
+      });
+    </script>
+  </body>
+</html>

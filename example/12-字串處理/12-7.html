@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>數字千分位符號</title>
+  </head>
+  <body>
+    <script>
+      function Num(num) {
+        const n = num + "";
+        const numArr = n.split("").reverse();
+        const overArr = [];
+        let i = 0;
+        numArr.forEach((item) => {
+          i++;
+          if (i > 3) {
+            i = 1;
+            overArr.push(",");
+          }
+          overArr.push(item);
+        });
+        overArr.reverse();
+        return overArr.join("");
+      }
+
+      const n = Num(5241522);
+      console.log(n);
+    </script>
+  </body>
+</html>

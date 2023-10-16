@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>增加移除 Class</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/07-1.css" />
+  </head>
+  <body>
+    <div id="app">
+      <a class="menuBtn"><i class="fas fa-bars fa-3x"></i></a>
+      <div class="content">
+        <img id="logo" src="../images/logo1.png" alt="" />
+      </div>
+
+      <div class="menu">
+        <a class="closeBtn"><i class="fas fa-times fa-3x"></i></a>
+        <ul class="nav">
+          <li><a>abous</a></li>
+          <li><a>content</a></li>
+          <li><a>user</a></li>
+          <li><a>address</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const menu = document.querySelector(".menu");
+      const menuBtn = document.querySelector(".menuBtn");
+      const closeBtn = document.querySelector(".closeBtn");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.add("open");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        menu.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>

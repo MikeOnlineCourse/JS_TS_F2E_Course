@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>什麼是 Promise</title>
+  </head>
+  <body>
+    <script>
+      const promiseA = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({ name: "mike", age: 12 });
+          // reject("ERROR")
+        }, 300);
+      });
+
+      promiseA
+        .then((value) => {
+          console.log(value);
+        })
+        .catch((error) => console.log(error))
+        .finally(() => console.log("finally"));
+    </script>
+  </body>
+</html>

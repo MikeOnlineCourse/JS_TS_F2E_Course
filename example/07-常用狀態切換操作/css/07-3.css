@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Microsoft JhengHei", "Heiti TC", "sans-serif";
+}
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#app > .content {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/bg/11.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.3s;
+}
+img#logo {
+  width: 800px;
+}
+
+#app > .content > .mid > a {
+  cursor: pointer;
+  display: block;
+  width: 200px;
+  height: 60px;
+  margin: 60px auto 0 auto;
+  background-color: #49b9a5;
+  text-align: center;
+  line-height: 60px;
+  font-size: 22px;
+  border-radius: 30px;
+  color: #fff;
+  box-shadow: 0 4px 25px #298272;
+}
+#app.open > .content {
+  left: -350px;
+}
+#app.open > a.menuBtn > .open {
+  display: none;
+}
+#app.open > a.menuBtn > .close {
+  display: block;
+}
+a.menuBtn {
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  z-index: 100;
+  top: 50px;
+  right: 50px;
+}
+a.menuBtn > .open {
+  color: #fff;
+}
+a.menuBtn > .close {
+  display: none;
+  color: #000;
+}
+
+#app > .menu {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 350px;
+  height: 100%;
+  z-index: 20;
+  background-color: #fff;
+  transition: right 0.3s;
+}
+#app.open > .menu {
+  right: 0px;
+}
+#app > .menu > ul.nav {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 50%;
+  margin-top: -150px;
+  padding: 0;
+}
+#app > .menu > ul.nav > li {
+  display: block;
+  width: 100%;
+  height: 25%;
+}
+#app > .menu > ul.nav > li > a {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 50px;
+  line-height: 300%;
+  font-size: 22px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  font-weight: bold;
+}
+#app > .menu > ul.nav > li > a:hover {
+  opacity: 1;
+}

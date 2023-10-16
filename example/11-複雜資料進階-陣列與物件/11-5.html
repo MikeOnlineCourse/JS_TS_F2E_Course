@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>陣列迴圈應用二</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/02-5.css" />
+  </head>
+  <body>
+    <div class="mid">
+      <input class="seach" type="text" value="線上課程" />
+      <p>
+        最近熱門搜尋: <a class="tag" href="javascript:;">媽祖</a>、
+        <a class="tag" href="javascript:;">地震</a>、
+        <a class="tag" href="javascript:;">館長</a>、
+        <a class="tag" href="javascript:;">線上課程</a>
+      </p>
+      <div class="seach_list">
+        <!-- <div class="item">
+                <a href="javascript:;" target="_blank" class="title">台灣媽祖信仰- 维基百科，自由的百科全书</a>
+                <a href="javascript:;" target="_blank" class="link">https://zh.wikipedia.org/zh-tw/台灣媽祖信仰</a>
+                <p>媽祖信仰是臺灣普遍民間信仰。早期移民多自華南渡海，心驚膽顫，且台灣四面環海，海上活動頻繁，海神媽祖婆成臺灣人重要精神託付。臺灣有媽祖廟510座以上，有 ...</p>
+            </div> -->
+      </div>
+    </div>
+    <script>
+      const seachData = {
+        媽祖: [
+          {
+            title: "台灣媽祖信仰- 维基百科，自由的百科全书",
+            link: "https://zh.wikipedia.org/zh-tw/台灣媽祖信仰",
+            text: "媽祖信仰是臺灣普遍民間信仰。早期移民多自華南渡海，心驚膽顫，且台灣四面環海，海上活動頻繁，海神媽祖婆成臺灣人重要精神託付。臺灣有媽祖廟510座以上，有 ...",
+          },
+          {
+            title: "媽祖的介紹",
+            link: "www.ntcu.edu.tw/edison/otm/__1.html",
+            text: "媽祖就是「天上聖母」，我們一般通稱「媽祖」或「媽祖婆」。 媽祖是古時候的宋朝人，她的本名叫「林默娘」，從小就相當相當聰明，讀經書過目不忘。 媽祖十三歲的時後 ...",
+          },
+        ],
+        地震: [
+          {
+            title: "地震 - 中央氣象局",
+            link: "https://www.cwb.gov.tw/V7/earthquake/",
+            text: "資料來源：美國地質調查所主動發布之全球地震自動定位資訊，透過EMAIL方式通報.本網頁僅展示地震規模大於6之全球地震初步訊息，欲查詢詳細地震資訊請 ...",
+          },
+        ],
+        館長: [
+          {
+            title: "館長成吉思汗- YouTube",
+            link: "https://www.youtube.com/channel/UCnnp2fWa77PP2h08T7WAzzw",
+            text: "健身格鬥者的天堂成吉思汗健身俱樂部進化綜合格鬥中心https://www.facebook.com/mmagym.tw?ref=bookmarks 惡名昭彰全新 ",
+          },
+          {
+            title: "陳之漢- 维基百科，自由的百科全书",
+            link: "https://zh.wikipedia.org/zh-tw/陳之漢",
+            text: "陳之漢（1979年3月12日－），原名陳思翰，臺灣知名部落客、直播主、網路名人、企業家、運動員、健身教練、散打武術家，曾任志願役軍人，後為連鎖健身房創辦人兼執行長、「中華民國健力協會」顧問、服飾品牌創辦人。生於臺北蘆洲（今新北市蘆洲區），籍貫宜蘭，人稱「館長」。",
+          },
+        ],
+        線上課程: [
+          {
+            title: "Nuxt3 高效入門全攻略",
+            link: "https://thecodingpro.com/courses/nuxt3",
+            text: "本次課程屬 Nuxt3 的進階課程，你將會學習到 Nuxt3 相關的核心概念，並了解如何使用 Nuxt3 所提供的功能，來開發一個 SSR 的 Vue 網頁！也因此購課前提醒，學習者需有 Vue 開發經驗者為佳，強烈不建議完全的新手加入本課程。",
+          },
+          {
+            title: "Vue 單元測試 vue-test-utils｜入門",
+            link: "https://thecodingpro.com/courses/vue-test-utils",
+            text: "若你是寫過 Vue 但沒有寫過單元測試的工程師，這堂課程你將會學習到使用 vue-test-utils 更有效率地完成 Vue 的單元測試！因此課程將建立在已熟悉 Javascript、Vue3 的同學來學習，比較不適合尚未寫過 Vue 或沒用過 Vue-cli、Vite 的同學上課唷！",
+          },
+          {
+            title: "職人必修的 RWD 網頁入門班",
+            link: "https://hahow.in/cr/responsive-design",
+            text: "從零開始打好基礎建立觀念，帶入實作，用業界常常遇到的問題當舉例，教你如何解決很多因為行動裝置而產生破版，還有如何利用百分比的切版技巧來減少修改的時間",
+          },
+        ],
+      };
+
+      const seach = document.querySelector(".seach");
+      const seach_list = document.querySelector(".seach_list");
+      const tag = document.querySelectorAll(".tag");
+      let seachObj = seachData["線上課程"];
+      let html = "";
+
+      // DOM 元素的操作
+      function DOMrender() {
+        html = "";
+        seach_list.innerHTML = "";
+        for (let i = 0; i < seachObj.length; i++) {
+          html += `
+            <div class="item">
+                <a href="javascript:;" target="_blank" class="title">${seachObj[i].title}</a>
+                <a href="${seachObj[i].link}" target="_blank" class="link">${seachObj[i].link}</a>
+                <p>${seachObj[i].text}</p>
+            </div>
+          `;
+        }
+        seach_list.innerHTML = html;
+      }
+
+      //點擊標籤
+      for (let s = 0; s < tag.length; s++) {
+        tag[s].addEventListener("click", seachTagChange);
+      }
+
+      // 更改點到的資料
+      function seachTagChange() {
+        seachObj = seachData[this.innerText];
+        seach.value = this.innerText;
+        DOMrender();
+      }
+
+      //鍵盤事件
+      seach.addEventListener("keyup", function () {
+        seachObj = seachData[this.value];
+        if (seachObj === undefined) {
+          seachObj = [];
+        }
+        DOMrender();
+      });
+
+      // 初始化執行
+      DOMrender();
+    </script>
+  </body>
+</html>

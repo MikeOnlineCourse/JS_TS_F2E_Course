@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>淺拷貝與深拷貝 - 1</title>
+  </head>
+  <body>
+    <script>
+      const arr1 = ["mike", "andy"];
+      const arr2 = arr1.slice(0);
+      const arr3 = [...arr1];
+      arr2[1] = "jacky";
+      arr3[1] = "xuan";
+      console.log(arr1);
+      console.log(arr2);
+      console.log(arr3);
+
+      const obj1 = {
+        name: "mike",
+        age: 12,
+      };
+      const obj2 = Object.assign({}, obj1);
+      const obj3 = { ...obj1 };
+      obj2.name = "andy";
+      obj2.age = 100;
+      obj3.name = "xuan";
+      obj3.age = 55;
+      console.log(obj1);
+      console.log(obj2);
+      console.log(obj3);
+    </script>
+  </body>
+</html>

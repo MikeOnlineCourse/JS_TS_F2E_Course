@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>淺拷貝與深拷貝 - 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+  </head>
+  <body>
+    <script>
+      const obj1 = {
+        name: "mike",
+        info: {
+          age: 12,
+          address: "taiwan",
+          sex: "boy",
+          interest: {
+            code: "javascript",
+            sports: "basketball",
+            watch: "movie",
+          },
+        },
+      };
+
+      const obj2 = _.cloneDeep(obj1);
+      obj2.name = "jacky";
+      obj2.info.age = 100;
+      console.log(obj1);
+      console.log(obj2);
+    </script>
+  </body>
+</html>

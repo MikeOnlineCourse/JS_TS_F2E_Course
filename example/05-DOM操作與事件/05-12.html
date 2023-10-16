@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>mouseover & mouseout 事件</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/05-10.css" />
+  </head>
+  <body>
+    <div id="app">
+      <a id="Btn" href="javascript:;">開始滑動</a>
+      <p id="tit2">mouseover & mouseout 事件?</p>
+    </div>
+    <script>
+      const title = document.querySelector("#tit2");
+      const Btn = document.querySelector("#Btn");
+
+      Btn.addEventListener("mouseover", function () {
+        title.innerText = "我滑鼠滑進來啦!!!";
+      });
+      Btn.addEventListener("mouseout", function () {
+        title.innerText = "然後滑鼠又離開啦!!!";
+      });
+    </script>
+  </body>
+</html>

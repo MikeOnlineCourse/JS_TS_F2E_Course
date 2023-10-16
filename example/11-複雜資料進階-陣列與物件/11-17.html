@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>展開運算子</title>
+  </head>
+  <body>
+    <script>
+      // 陣列的合併
+      const a = [1, 2, 3];
+      const b = [4, 5];
+      // const c = a.concat(b);
+      const c = [...a, ...b];
+
+      // ---------------------------------------------------------------------
+
+      // 陣列展開傳入函式
+      function addNum(x, y) {
+        return x + y;
+      }
+      const arr = [1, 2];
+      addNum(...arr);
+
+      // ---------------------------------------------------------------------
+
+      //字串分割
+      const title = "TheCodingPro";
+      // const stringNameArr = name.split("");
+      const strTitleArr = [...title];
+      console.log(strTitleArr);
+
+      // ---------------------------------------------------------------------
+
+      // 剩下的解構物件
+      const obj1 = {
+        name: "mike",
+        age: 12,
+        address: "taiwan",
+        sex: "boy",
+        code: "javascript",
+        sports: "basketball",
+        watch: "movie",
+      };
+      const { name, age, ...info } = obj1;
+      console.log(name);
+      console.log(age);
+      console.log(info);
+    </script>
+  </body>
+</html>

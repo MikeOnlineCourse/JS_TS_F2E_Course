@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>事件綁定的兩種寫法</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/bg.css" />
+    <link rel="stylesheet" href="./css/05-7.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1 id="title">TheCodingPro</h1>
+      <div class="btnbox">
+        <a id="fontSizeBig_btn" href="javascript:;">放大</a>
+        <a id="fontSizeSmall_btn" href="javascript:;">縮小</a>
+        <a id="fontSizeNormal_btn" href="javascript:;">正常</a>
+      </div>
+    </div>
+    <script>
+      const title = document.querySelector("#title");
+      const fontSizeBig_btn = document.querySelector("#fontSizeBig_btn");
+      const fontSizeSmall_btn = document.querySelector("#fontSizeSmall_btn");
+      const fontSizeNormal_btn = document.querySelector("#fontSizeNormal_btn");
+
+      fontSizeBig_btn.onclick = function () {
+        title.style.fontSize = "150px";
+      };
+      fontSizeSmall_btn.onclick = function () {
+        title.style.fontSize = "40px";
+      };
+      fontSizeNormal_btn.onclick = function () {
+        title.style.fontSize = "80px";
+      };
+
+      // fontSizeBig_btn.addEventListener("click", function () {
+      //   title.style.fontSize = "150px";
+      // });
+      // fontSizeSmall_btn.addEventListener("click", function () {
+      //   title.style.fontSize = "40px";
+      // });
+      // fontSizeNormal_btn.addEventListener("click", function () {
+      //   title.style.fontSize = "80px";
+      // });
+    </script>
+  </body>
+</html>

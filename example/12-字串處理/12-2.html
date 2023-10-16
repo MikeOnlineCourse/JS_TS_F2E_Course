@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>分割字串 slice</title>
+  </head>
+  <body>
+    <script>
+      const email = "1208966@gmail.com";
+
+      // 取索引3 ~ 7之間的字串
+      console.log(email.slice(3, 7));
+
+      // 取索引7之後的所有字串
+      console.log(email.slice(7));
+
+      // 取索引 0 ~ "@" 的索引位置的字串
+      // indexOf 取得查找比對相對應的索引位置，如果沒有回傳 -1
+      console.log(email.slice(0, email.indexOf("@")));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>for 迴圈 - 1</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/06-2.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      const app = document.querySelector("#app");
+      let html = "";
+      for (let i = 0; i < 51; i++) {
+        html += `
+          <div class="Ball" style="border-radius:${i}px;">${i}</div>;
+        `;
+        // html +=
+        //   '<div class="Ball" style="border-radius:' +
+        //   i +
+        //   'px;">' +
+        //   i +
+        //   "</div>";
+      }
+      app.innerHTML = html;
+    </script>
+  </body>
+</html>

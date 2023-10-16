@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>&& 語法與 || 語法</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/bg.css" />
+  </head>
+  <body>
+    <img src="../images/16590-006.jpg" alt="" />
+    <script>
+      const meteor = "下雨"; // 晴天、下雨
+      const time = "上午"; // 上午、下午
+
+      if (meteor === "下雨" && time === "上午") {
+        console.log("兩個條件都達成");
+      }
+
+      if (meteor === "晴天" || time === "上午") {
+        console.log("只有後面的條件達成");
+      }
+
+      if (meteor === "下雨" || time === "下午") {
+        console.log("只有前面的條件達成");
+      }
+    </script>
+  </body>
+</html>

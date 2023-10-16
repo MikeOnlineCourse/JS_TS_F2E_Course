@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>計時器進階組合( 播放、暫停、重新 )</title>
+    <link rel="stylesheet" href="./css/08-3.css" />
+  </head>
+  <body>
+    <div>
+      <h1 id="timeTxt">0</h1>
+      <div class="btn">
+        <a id="play" class="">播放</a>
+        <a id="stop">暫停</a>
+        <a id="reset">重新</a>
+      </div>
+    </div>
+
+    <script>
+      const timeTxt = document.getElementById("timeTxt");
+      const play = document.getElementById("play");
+      const stop = document.getElementById("stop");
+      const reset = document.getElementById("reset");
+
+      let playTime = null;
+      let time = 0;
+      let isStop = false;
+
+      play.addEventListener("click", playFn);
+      stop.addEventListener("click", stopFn);
+      reset.addEventListener("click", resetFn);
+
+      function playFn() {
+        play.removeEventListener("click", playFn);
+        TimeGo();
+        resetActive();
+        this.classList.add("active");
+      }
+
+      function stopFn() {
+        play.addEventListener("click", playFn);
+        clearInterval(playTime);
+        resetActive();
+        this.classList.add("active");
+      }
+
+      function resetFn() {
+        play.removeEventListener("click", playFn);
+        time = 0;
+        timeTxt.innerText = time;
+        resetActive();
+        this.classList.add("active");
+        clearInterval(playTime);
+        setTimeout(() => {
+          resetActive();
+          play.addEventListener("click", playFn);
+        }, 1500);
+      }
+
+      function TimeGo() {
+        playTime = setInterval(() => {
+          time++;
+          timeTxt.innerText = time;
+        }, 1000);
+      }
+
+      function resetActive() {
+        play.classList.remove("active");
+        stop.classList.remove("active");
+        reset.classList.remove("active");
+      }
+    </script>
+  </body>
+</html>

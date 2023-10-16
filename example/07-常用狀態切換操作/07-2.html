@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>切換 class</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/07-2.css" />
+  </head>
+  <body>
+    <div id="app">
+      <a class="menuBtn">
+        <span class="open">
+          <i class="fas fa-bars fa-3x"></i>
+        </span>
+        <span class="close">
+          <i class="fas fa-times fa-3x"></i>
+        </span>
+      </a>
+
+      <div class="content">
+        <img id="logo" src="../images/logo1.png" alt="" />
+      </div>
+
+      <div class="menu">
+        <ul class="nav">
+          <li><a>abous</a></li>
+          <li><a>content</a></li>
+          <li><a>user</a></li>
+          <li><a>address</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const app = document.querySelector("#app");
+      const menu = document.querySelector(".menu");
+      const menuBtn = document.querySelector(".menuBtn");
+
+      menuBtn.addEventListener("click", () => {
+        app.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

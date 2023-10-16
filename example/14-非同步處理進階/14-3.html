@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>什麼是 async / await? 把非同步變成同步</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  </head>
+  <body>
+    <script>
+      const init1 = () => {
+        console.log(1);
+        axios
+          .get("https://www.mocky.io/v2/5cc3f5723400005d00765480")
+          .then((res) => {
+            console.log(2);
+            console.log("拿到資料:", res.data);
+          });
+        console.log(3);
+      };
+
+      const init2 = async () => {
+        console.log(1);
+        const res = await axios.get(
+          "https://www.mocky.io/v2/5cc3f5723400005d00765480"
+        );
+        console.log(2);
+        console.log("拿到資料:", res.data);
+      };
+
+      init1();
+      // init2();
+    </script>
+  </body>
+</html>

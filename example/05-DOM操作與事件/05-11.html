@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>常用的window方法</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/05-10.css" />
+  </head>
+  <body>
+    <div id="app">
+      <a id="Btn" href="javascript:;">常用的 window方法 ?</a>
+      <p id="tit2"></p>
+    </div>
+    <script>
+      const title = document.querySelector("#tit2");
+      const Btn = document.querySelector("#Btn");
+      const text = `
+        window.alert()	        //跳出一個警告訊息窗。
+        window.close()	        //關閉瀏覽器視窗。
+        window.confirm()	      //跳出一個有確認與取消按鈕地確認框。
+        window.createPopup()	  //建立一個彈出視窗。
+        window.focus()	        //取得焦點。
+        window.blur()	          //移除該視窗焦點。
+        window.moveBy()	        //以相對位置移動視窗。
+        window.moveTo()	        //移動視窗到指定位置。
+        window.open()	          //開啟一個新的瀏覽器視窗。
+        window.print()	        //輸出目前窗口內容。
+        window.prompt()	        //跳出可輸入訊息的對話。 
+        window.setInterval()	  //計時器。
+        window.setTimeout()     //計時器。
+        window.clearInterval()	//取消由setInterval()設定的計時器。
+        window.clearTimeout()	  //取消由setTimeout()方法設定的計時器。
+        window.resizeBy()	      //調整視窗大小。
+        window.resizeTo()	      //調整視窗大小。
+        window.scrollBy()	      //滾動內容。
+        window.scrollTo()	      //滾動內容。
+      `;
+
+      Btn.addEventListener("click", function () {
+        console.log(text);
+        console.log(window);
+        title.innerText = "F12 查看 console.log()";
+      });
+      /*
+        window.alert()	        //跳出一個警告訊息窗。
+        window.close()	        //關閉瀏覽器視窗
+        window.confirm()	    //跳出一個有確認與取消按鈕地確認框。
+        window.createPopup()	//建立一個彈出視窗。
+        window.focus()	        //取得焦點。
+        window.blur()	        //移除該視窗焦點。
+        window.moveBy()	        //以相對位置移動視窗。
+        window.moveTo()	        //移動視窗到指定位置。
+        window.open()	        //開啟一個新的瀏覽器視窗。
+        window.print()	        //輸出目前窗口內容。
+        window.prompt()	        //跳出可輸入訊息的對話
+        window.setInterval()	//計時器。
+        window.setTimeout()	    //計時器。
+        window.clearInterval()	//取消由 setInterval() 設定的計時器。
+        window.clearTimeout()	//取消由 setTimeout() 方法設定的計時器。
+        window.resizeBy()	    //調整視窗大小。
+        window.resizeTo()	    //調整視窗大小。
+        window.scrollBy()	    //滾動內容。
+        window.scrollTo()	    //滾動內容。
+        */
+    </script>
+  </body>
+</html>

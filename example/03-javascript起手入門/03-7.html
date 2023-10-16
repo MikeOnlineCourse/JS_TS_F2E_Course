@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>var let const 差異</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/bg.css" />
+  </head>
+  <body>
+    <img id="logo" src="../images/logo1.png" alt="" />
+    <script>
+      var test;
+      console.log(test); // -> undefined
+      // ---------------------------------------------------------
+      // var 並無區域性的概念
+      if (false) {
+        var a = 1;
+      }
+      console.log(a); // -> undefined
+      // ---------------------------------------------------------
+      // let 跟 const 具有區域性的概念
+      if (false) {
+        let b = 1;
+        const c = 1;
+      }
+      console.log(b); // -> ReferenceError: b is not defined
+      console.log(c); // -> ReferenceError: c is not defined
+      // ---------------------------------------------------------
+      // const 是一個常數，代表是不能被修改的值
+      const age = 12;
+      age = 20; // ->　Assignment to constant variable.
+      // ---------------------------------------------------------
+    </script>
+  </body>
+</html>

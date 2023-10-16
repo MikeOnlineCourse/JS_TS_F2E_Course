@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>跨網域存取CORS</title>
+  </head>
+  <body>
+    <!-- https://alerts.ncdr.nat.gov.tw/RSS.aspx -->
+    <!-- https://alerts.ncdr.nat.gov.tw/JSONAtomFeeds.ashx -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script>
+      const url = "https://www.vscinemas.com.tw/VsWeb/api/GetLstDicCinema";
+
+      axios
+        .get(url)
+        .then((res) => {
+          console.log("拿到資料:", res.data);
+        })
+        .catch((error) => {
+          alert(error.response.data.msg);
+          console.error("發生錯誤 狀態碼不是200:", error.response.data.msg);
+        });
+    </script>
+  </body>
+</html>

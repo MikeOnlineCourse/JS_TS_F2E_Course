@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Click 事件初體驗</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/bg.css" />
+  </head>
+  <body>
+    <div id="app">
+      <img src="../images/logo1.png" alt="" />
+      <a id="Btn" href="javascript:;"> 馬上去官網看一下 </a>
+    </div>
+    <script>
+      function Welcone(e) {
+        console.log(e);
+      }
+
+      document.querySelector("#Btn").addEventListener("click", Welcone);
+    </script>
+  </body>
+</html>

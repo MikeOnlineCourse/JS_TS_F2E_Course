@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>方括號與大括號</title>
+  </head>
+  <body>
+    <ul id="app"></ul>
+
+    <script>
+      const Datestr = [
+        "2006/02/03",
+        "test/07/sd",
+        "2016/05/10",
+        "1998/03/07",
+        "12345/23/45678",
+        "1234/23/45678",
+        "12345/23/45",
+      ];
+
+      const regex = /^([0-9]{4})\/([0-9]{2})\/([0-9]{2})$/;
+
+      let html = "";
+
+      const date = Datestr.filter((date) => {
+        return date.match(regex);
+      })
+        .map((item) => {
+          return item.replace(/\//g, "-");
+        })
+        .forEach((obj) => {
+          html += `<li>${obj}</li>`;
+        });
+
+      document.querySelector("#app").innerHTML = html;
+
+      console.log(date);
+    </script>
+  </body>
+</html>

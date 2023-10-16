@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>function default value</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/bg.css" />
+  </head>
+  <body>
+    <div id="app">
+      <img src="../images/logo1.png" alt="" />
+      <a id="Btn" href="javascript:;"> 馬上去官網看一下 </a>
+    </div>
+    <script>
+      const addValue = (a = 1, b = 2) => {
+        return a + b;
+      };
+
+      const addUserName = (name = "mike") => {
+        return `我的名字是 ${name}`;
+      };
+
+      const val = addValue();
+
+      console.log(val);
+      console.log(addUserName());
+    </script>
+  </body>
+</html>

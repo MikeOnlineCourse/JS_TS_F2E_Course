@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>陣列迴圈應用一</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/02-4.css" />
+  </head>
+  <body>
+    <header></header>
+    <div id="app">
+      <h1>即時新聞</h1>
+      <ul id="list">
+        <!-- <li><a href="javascript:;"></a></li>-->
+      </ul>
+      <a class="More" href="javascript:;">More ></a>
+    </div>
+    <footer></footer>
+    <script>
+      let html = "";
+      const news = [
+        {
+          title: "會計年度最後一個月 美國防部狂花1.4億買蝦蟹...",
+          url: "https://news.ebc.net.tw/News/Article/155505",
+        },
+        {
+          title: "大逆轉！情侶照1.5萬變16萬 當事人道歉了...",
+          url: "https://news.ebc.net.tw/News/Article/155504",
+        },
+        {
+          title: "台南是民主聖地？謝龍介：變民主很火大...",
+          url: "https://news.ebc.net.tw/News/Article/155503",
+        },
+        {
+          title: "槓王選立委！韓笑回他長大了 潘恆旭尷尬回應...",
+          url: "https://news.ebc.net.tw/News/Article/155502",
+        },
+        {
+          title: "捷運西門站藥妝搶駐！日藥妝210萬標下6店面...",
+          url: "https://news.ebc.net.tw/News/Article/155501",
+        },
+        {
+          title: "她全身麻醉動刀 苦求男友陪！遭嗆：我要上班...",
+          url: "https://news.ebc.net.tw/News/Article/155499",
+        },
+        {
+          title: "小黃司機遭3人挾持30公里！傳LINE求救逃脫...",
+          url: "https://news.ebc.net.tw/News/Article/155497",
+        },
+      ];
+
+      for (let i = 0; i < news.length; i++) {
+        html += `<li><a href="${news[i].url}">${news[i].title}</a></li>`;
+      }
+
+      document.querySelector("#list").innerHTML = html;
+    </script>
+  </body>
+</html>

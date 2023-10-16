@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>物件的解構</title>
+  </head>
+  <body>
+    <script>
+      const obj1 = {
+        name: "mike",
+        age: 12,
+        address: "taiwan",
+        sex: "boy",
+        code: "javascript",
+        sports: "basketball",
+        watch: "movie",
+      };
+
+      // 解構物件
+      const { name, age, address, sex, code, sports, watch } = obj1;
+      console.log(name, age, address, sex, code, sports, watch);
+
+      // 以前
+      // function addContent(obj) {
+      //   return `姓名:${obj.name}, 年齡:${obj.age}`;
+      // }
+      // 解構
+      function addContent({ name, age }) {
+        return `姓名:${name}, 年齡:${age}`;
+      }
+      const str = addContent(obj1);
+      console.log(str);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>?? 空值合併運算符</title>
+  </head>
+  <body>
+    <script>
+      const str1 = null ?? "default null";
+      console.log(str); // -> default null
+
+      const str2 = undefined ?? "default undefined";
+      console.log(str); // -> default undefined
+
+      const int = 0 ?? 55;
+      console.log(int); // -> 0
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>初始化多個 API 執行處理方式 1 - Promise.all</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  </head>
+  <body>
+    <script>
+      const promises = [
+        axios.get("https://vue-lessons-api.vercel.app/photo/list"),
+        axios.get("https://vue-lessons-api.vercel.app/seo/home"),
+        axios.get("https://www.mocky.io/v2/5cc3f5723400005d00765480"),
+      ];
+
+      // const init = () => {
+      //   Promise.all(promises)
+      //     .then((values) => {
+      //       console.log(values);
+      //     })
+      //     .catch((error) => {
+      //       console.error("ERROR=>", error.response.data);
+      //     });
+      // };
+
+      const init = async () => {
+        try {
+          const values = await Promise.all(promises);
+          console.log("=>", values);
+        } catch (error) {
+          console.error("ERROR=>", error.response.data);
+        }
+      };
+
+      init();
+    </script>
+  </body>
+</html>

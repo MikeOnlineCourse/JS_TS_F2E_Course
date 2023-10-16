@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Microsoft JhengHei", "Heiti TC", "sans-serif";
+}
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+}
+img#logo {
+  display: block;
+  width: 300px;
+  margin-bottom: 10px;
+}
+ul.navBox {
+  width: 300px;
+}
+ul.navBox > li {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+ul.navBox > li > a.nav {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
+  padding-left: 20px;
+  color: lightcoral;
+  font-weight: bold;
+  background-color: #fff;
+  border-left: 8px solid lightcoral;
+  font-size: 16px;
+  transition: border 0.2s, font-size 0.2s, color 0.2s, background 0.2s;
+}
+ul.navBox > li > a.nav:hover {
+  color: #fff;
+  background-color: lightcoral;
+}
+
+ul.navBox > li > a.nav.active {
+  border-left: 20px solid lightcoral;
+  font-size: 26px;
+}

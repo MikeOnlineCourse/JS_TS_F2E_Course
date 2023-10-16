@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>字串前後去除空白 trim</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div>
+      <input id="searchBar" type="text" />
+      <button id="submit">送出</button>
+    </div>
+
+    <script>
+      const searchBar = document.querySelector("#searchBar");
+      const submit = document.querySelector("#submit");
+
+      submit.addEventListener("click", () => {
+        const str1 = searchBar.value;
+        const str2 = searchBar.value.trim();
+        console.log("str1:", str1);
+        console.log("str2:", str2);
+      });
+    </script>
+  </body>
+</html>
