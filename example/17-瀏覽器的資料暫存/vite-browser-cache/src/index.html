@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>browser cache</title>
+  </head>
+  <body>
+    <div id="app">
+      <img id="logo" src="../images/logo1.png" alt="" />
+      <!-- 登入頁面 -->
+      <div id="login-page">
+        <div class="input-box">
+          <p>NAME</p>
+          <input id="username" type="text" placeholder="輸入使用者名稱" />
+          <p class="error username-error hidden">{{error_message.username}}</p>
+        </div>
+        <div class="input-box">
+          <p>PASSWORD</p>
+          <input id="password" type="password" placeholder="輸入密碼" />
+          <p class="error password-error hidden">{{error_message.password}}</p>
+        </div>
+
+        <div class="input-box center-box">
+          <input id="terms" type="checkbox" />
+          <label for="terms">我已閱讀使用者條款</label>
+        </div>
+        <button class="btn">登入</button>
+      </div>
+
+      <!-- 成功頁面 -->
+      <div id="success-page" class="hidden">
+        <h1>登入成功</h1>
+        <button id="logup">登出</button>
+      </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
