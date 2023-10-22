@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>常見的數學函式 Math</title>
+  </head>
+  <body>
+    <script>
+      const random = Math.random(); // 回傳 0 ~ 1 之間的隨機亂數
+      const round = Math.round(3.6); // 回傳四捨五入後的數字
+      const floor = Math.floor(3.6); // 去除小數點，回傳正整數
+
+      console.log("random=>", random);
+      console.log("round=>", round);
+      console.log("floor=>", floor);
+
+      // 取亂數之間的公式 Math.random() * ( 最大値 - 最小値 + 1 )  + 最小値;
+      const handleRandom = (max, min) => {
+        const scopeNum = Math.random() * (max - min + 1) + min;
+        const num = Math.floor(scopeNum);
+        return num;
+      };
+      const scope = handleRandom(10, 4);
+      console.log(scope);
+
+      // 其他 Math 數學函式
+      // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math
+    </script>
+  </body>
+</html>
