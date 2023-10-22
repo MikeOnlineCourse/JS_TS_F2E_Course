@@ -21,6 +21,13 @@
         background-size: cover;
         background-position: center bottom;
       }
+      button {
+        width: 100px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 20px;
+      }
     </style>
   </head>
   <body>
@@ -28,9 +35,9 @@
     <script>
       const gotoPage = document.querySelector("#gotoPage");
 
-      gotoPage.addEventListener("click", () => [
-        (window.location.href = `https://thecodingpro.com/${window.location.search}`),
-      ]);
+      gotoPage.addEventListener("click", () => {
+        window.location.href = `https://thecodingpro.com/${window.location.search}`;
+      });
     </script>
   </body>
 </html>
