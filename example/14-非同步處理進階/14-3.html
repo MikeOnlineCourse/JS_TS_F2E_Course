@@ -11,7 +11,7 @@
       const init1 = () => {
         console.log(1);
         axios
-          .get("https://www.mocky.io/v2/5cc3f5723400005d00765480")
+          .get("https://vue-lessons-api.vercel.app/city/list")
           .then((res) => {
             console.log(2);
             console.log("拿到資料:", res.data);
@@ -22,7 +22,7 @@
       const init2 = async () => {
         console.log(1);
         const res = await axios.get(
-          "https://www.mocky.io/v2/5cc3f5723400005d00765480"
+          "https://vue-lessons-api.vercel.app/city/list"
         );
         console.log(2);
         console.log("拿到資料:", res.data);
