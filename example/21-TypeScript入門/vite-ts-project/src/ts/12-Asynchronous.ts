@@ -1,0 +1,30 @@
+// 非同步(Asynchronous)函式
+import axios, { AxiosResponse } from "axios";
+
+type ApiResponse<T> = {
+  status: number;
+  data: T;
+}; // 如果使用 Axios 就不需要自己定義，因為 Axios 已經定義好了，AxiosResponse<T> 就是一個泛型
+
+type TPhotoList = {
+  url: string;
+};
+
+function apiRequest<T>(url: string): Promise<ApiResponse<T>> {
+  return fetch(url).then((response) => response.json());
+}
+
+apiRequest<TPhotoList[]>("https://vue-lessons-api.vercel.app/photo/list").then((res) => {
+  console.log("API=>", res);
+});
+
+axios.get<TPhotoList[]>("https://vue-lessons-api.vercel.app/photo/list").then((res) => {
+  console.log("axios=>", res.data);
+});
+
+function apiGetPhotoList(): Promise<AxiosResponse<TPhotoList>> {
+  return axios.get("https://vue-lessons-api.vercel.app/photo/list");
+}
+
+const resPhoto = await apiGetPhotoList();
+console.log("photo list=>", resPhoto.data);
