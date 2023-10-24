@@ -10,7 +10,7 @@
     <script>
       // axios 回傳是 Promise 物件
       axios
-        .get("https://www.mocky.io/v2/5cc3f5723400005d00765480")
+        .get("https://vue-lessons-api.vercel.app/city/list")
         .then((res) => {
           console.log("拿到資料:", res.data);
         })
@@ -20,7 +20,7 @@
         });
 
       // fetch 回傳是 Promise 物件
-      fetch("https://www.mocky.io/v2/5cc3f5723400005d00765480", {
+      fetch("https://vue-lessons-api.vercel.app/city/list", {
         method: "GET",
       })
         .then((response) => {

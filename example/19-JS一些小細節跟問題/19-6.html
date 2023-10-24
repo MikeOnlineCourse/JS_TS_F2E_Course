@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>XSS 是什麼?</title>
+    <title>XSS 解決方案</title>
     <style>
       * {
         padding: 0;
@@ -53,17 +53,21 @@
   </head>
   <body>
     <div id="app">
-      <h1 class="title"></h1>
+      <h1 class="title">
+        <!-- <img src=x onerror=alert("哈哈哈我程式執行了")> -->
+      </h1>
       <input class="inpTxt" type="text" placeholder="請填入名字" />
       <button class="send">送出</button>
     </div>
-    <!-- <img src=x onerror=alert("哈哈哈我程式執行了")> -->
+    <!-- https://jsxss.com/zh/index.html -->
+    <script src="https://rawgit.com/leizongmin/js-xss/master/dist/xss.js"></script>
     <script>
       const sendRef = document.querySelector(".send");
       const titleRef = document.querySelector(".title");
       sendRef.addEventListener("click", () => {
         const inputValue = document.querySelector(".inpTxt").value;
-        titleRef.innerHTML = inputValue;
+        // titleRef.innerHTML = inputValue;
+        titleRef.innerHTML = filterXSS(inputValue);
       });
     </script>
   </body>
