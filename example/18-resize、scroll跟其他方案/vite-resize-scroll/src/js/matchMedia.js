@@ -60,7 +60,7 @@ const fetchInit = async () => {
 // 初始化抓資料
 fetchInit();
 
-// 有些瀏覽器沒有 addEventListener
+// 有些瀏覽器 window.matchMedia 沒有 addEventListener
 if ("addEventListener" in phoneMediaQuery) {
   phoneMediaQuery.addEventListener("change", splicePhoto);
 } else {
