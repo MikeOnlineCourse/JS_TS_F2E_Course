@@ -3,7 +3,7 @@ import "../css/style.css";
 import axios from "axios";
 import { useGetRef } from "./utils/useGetRef.js";
 import { info, parseReq } from "./utils/useInputData.js";
-import { cookieSave } from "./utils/useLocalSave";
+import { cookie } from "./utils/useLocalSave";
 
 const {
   username,
@@ -19,7 +19,7 @@ const {
 
 let isLogin = false;
 
-const cookieInfo = cookieSave.get("info").data;
+const cookieInfo = cookie.get("info").data;
 
 const errorMessageShow = () => {
   isLogin = false;
@@ -34,7 +34,7 @@ const errorMessageShow = () => {
 };
 
 const checkPageStatus = () => {
-  const infoData = cookieSave.get("info").data;
+  const infoData = cookie.get("info").data;
   if (infoData) {
     loginPage.classList.add("hidden");
     successPage.classList.remove("hidden");
@@ -46,7 +46,10 @@ const checkPageStatus = () => {
 
 const sendLogin = async (req) => {
   try {
-    const res = await axios.post("https://vue-lessons-api.vercel.app/auth/login", req);
+    const res = await axios.post(
+      "https://vue-lessons-api.vercel.app/auth/login",
+      req
+    );
     return res.data;
   } catch (err) {
     const errorRes = err.response.data.error_message;
@@ -80,14 +83,14 @@ btn.addEventListener("click", async () => {
     return;
   }
   const data = await sendLogin(req);
-  // localStorageSave.set("info", data);
-  cookieSave.set("info", data);
+  // localstorage.set("info", data);
+  cookie.set("info", data);
   console.log(data);
 });
 
 // 登出
 logup.addEventListener("click", () => {
-  cookieSave.remove("info");
+  cookie.remove("info");
 });
 
 const init = () => {
@@ -99,7 +102,7 @@ init();
 
 // 檢查 token 狀態
 setInterval(() => {
-  if (JSON.stringify(cookieInfo) !== JSON.stringify(cookieSave.get("info").data)) {
+  if (JSON.stringify(cookieInfo) !== JSON.stringify(cookie.get("info").data)) {
     checkPageStatus();
   }
 }, 400);
