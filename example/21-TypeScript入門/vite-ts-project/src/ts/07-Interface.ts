@@ -3,7 +3,7 @@ interface IPerson {
   lastName: string;
 }
 
-const mike = { firstName: "Cheng", lastName: "Mike" };
+const mike:IPerson = { firstName: "Cheng", lastName: "Mike" };
 
 // -----------------------------
 
