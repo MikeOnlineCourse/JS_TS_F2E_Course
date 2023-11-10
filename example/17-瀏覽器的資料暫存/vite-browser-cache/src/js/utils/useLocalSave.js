@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-const localStorageSave = {
+const localstorage = {
   set: (key, data) => {
     localStorage.setItem(key, JSON.stringify(data));
   },
@@ -16,7 +16,7 @@ const localStorageSave = {
   },
 };
 
-const cookieSave = {
+const cookie = {
   set: (key, data) => {
     Cookies.set(key, JSON.stringify(data));
   },
@@ -38,4 +38,4 @@ const cookieSave = {
   },
 };
 
-export { localStorageSave, cookieSave };
+export { localstorage, cookie };

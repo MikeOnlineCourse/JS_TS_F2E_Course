@@ -1,0 +1,20 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.tabWidth": 2,           // 空格
+  "prettier.semi": true,            // 分號
+  "prettier.printWidth": 120,       // 設定代碼最佳長度，超過則執行換行
+  "prettier.singleQuote": false,    // 使用單引號而不是雙引號
+  "prettier.trailingComma": "all",  // 尾部要不要逗號
+}
