@@ -11,6 +11,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
       },
+      output:{
+        dir: resolve(__dirname, "dist"),
+      }
     },
   },
   plugins: [

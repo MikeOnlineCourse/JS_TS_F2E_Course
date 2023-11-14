@@ -24,8 +24,7 @@
     // 識別js檔案
     "allowJs": true,
     // 進行js檔案的型別檢查
-    "checkJs": true,
-
+    "checkJs": false
   },
-  "include": ["src"]
+  "include": ["src", "dist"]
 }
