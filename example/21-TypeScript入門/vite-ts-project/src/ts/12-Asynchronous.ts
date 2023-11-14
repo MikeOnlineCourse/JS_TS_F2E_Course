@@ -17,8 +17,11 @@ async function apiRequest<T>(url: string): Promise<ApiResponse<T>> {
 }
 
 apiRequest<TPhotoList[]>("https://vue-lessons-api.vercel.app/photo/list").then((res) => {
-  console.log("API=>", res.data);
+  console.log("API then=>", res.data);
 });
+
+const res = await apiRequest<TPhotoList[]>("https://vue-lessons-api.vercel.app/photo/list")
+console.log("API await=>", res.data);
 
 
 axios.get<TPhotoList[]>("https://vue-lessons-api.vercel.app/photo/list").then((res) => {
