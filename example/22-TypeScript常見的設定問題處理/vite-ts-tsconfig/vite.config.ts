@@ -7,10 +7,14 @@ import eslint from "vite-plugin-eslint";
 export default defineConfig({
   root: "src",
   build: {
+    target: 'esnext',
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
       },
+      output:{
+        dir: resolve(__dirname, "dist"),
+      }
     },
   },
   plugins: [

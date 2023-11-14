@@ -12,6 +12,9 @@ export default defineConfig({
         main: resolve(__dirname, "src/index.html"),
         about: resolve(__dirname, "src/about.html"),
       },
+      output: {
+        dir: resolve(__dirname, "dist"),
+      },
     },
   },
   plugins: [

@@ -69,7 +69,7 @@ interface IBoxFontSize {
 interface IBoxStyle extends IWidth, IHeight, IBoxFontSize {
   color: string;
   border: string;
-  paddding: string;
+  padding: string;
   margin: string;
 }
 
@@ -78,7 +78,7 @@ const box: IBoxStyle = {
   height: "100px",
   color: "red",
   border: "4px solid #000",
-  paddding: "10px",
+  padding: "10px",
   margin: "10px",
   "font-size": "16px",
   "font-weight": "bold",
