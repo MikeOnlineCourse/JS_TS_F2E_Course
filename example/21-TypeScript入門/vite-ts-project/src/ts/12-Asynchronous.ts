@@ -10,13 +10,16 @@ type TPhotoList = {
   url: string;
 };
 
-function apiRequest<T>(url: string): Promise<ApiResponse<T>> {
-  return fetch(url).then((response) => response.json());
+async function apiRequest<T>(url: string): Promise<ApiResponse<T>> {
+  const response = await fetch(url);
+  const data = await response.json() as T;
+  return {status: response.status, data}
 }
 
 apiRequest<TPhotoList[]>("https://vue-lessons-api.vercel.app/photo/list").then((res) => {
-  console.log("API=>", res);
+  console.log("API=>", res.data);
 });
+
 
 axios.get<TPhotoList[]>("https://vue-lessons-api.vercel.app/photo/list").then((res) => {
   console.log("axios=>", res.data);
