@@ -26,5 +26,5 @@
     // 進行js檔案的型別檢查
     "checkJs": false
   },
-  "include": ["src", "dist"]
+  "include": ["src/**/*"]
 }
