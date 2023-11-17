@@ -5,17 +5,7 @@ import { useGetRef } from "./utils/useGetRef.js";
 import { info, parseReq } from "./utils/useInputData.js";
 import { cookie } from "./utils/useLocalSave";
 
-const {
-  username,
-  password,
-  usernameError,
-  passwordError,
-  terms,
-  btn,
-  loginPage,
-  successPage,
-  logup,
-} = useGetRef();
+const { username, password, usernameError, passwordError, terms, btn, loginPage, successPage, logup } = useGetRef();
 
 let isLogin = false;
 
@@ -46,10 +36,7 @@ const checkPageStatus = () => {
 
 const sendLogin = async (req) => {
   try {
-    const res = await axios.post(
-      "https://vue-lessons-api.vercel.app/auth/login",
-      req
-    );
+    const res = await axios.post("https://vue-lessons-api.vercel.app/auth/login", req);
     return res.data;
   } catch (err) {
     const errorRes = err.response.data.error_message;

@@ -23,6 +23,8 @@ module.exports = {
     "array-callback-return": "error",
     "no-alert": "off",
     quotes: ["error", "double"],
+    "object-curly-newline": "off",
+    "max-len": ["error", { code: 120 }],
 
     // import 副檔名是否需要 ( https://github.com/import-js/eslint-plugin-import#eslint-plugin-import )
     "import/extensions": "off",
@@ -34,10 +36,7 @@ module.exports = {
     "implicit-arrow-linebreak": "off",
 
     // https://github.com/import-js/eslint-plugin-import/blob/v2.28.1/docs/rules/no-extraneous-dependencies.md
-    "import/no-extraneous-dependencies": [
-      "error",
-      { devDependencies: ["vite.config.js"] },
-    ],
+    "import/no-extraneous-dependencies": ["error", { devDependencies: ["vite.config.js", ".eslintrc.cjs"] }],
 
     // https://eslint.org/docs/latest/rules/consistent-return
     "consistent-return": ["error", { treatUndefinedAsUnspecified: true }],
