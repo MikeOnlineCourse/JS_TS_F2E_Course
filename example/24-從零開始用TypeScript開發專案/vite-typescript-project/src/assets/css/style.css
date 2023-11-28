@@ -1,0 +1,194 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background-color: #e5e5e5;
+  padding-bottom: 10px;
+}
+#app {
+  width: 100%;
+}
+/* -------------------------------------------------------- */
+.user_title > img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 65px auto 20px auto;
+  border: 5px solid #fff;
+}
+
+.edit_box {
+  width: 310px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@scope (.edit_box) {
+  h1 {
+    display: block;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+    font-size: 25px;
+    text-align: center;
+  }
+  input {
+    width: 100%;
+    height: 30px;
+    padding-left: 5px;
+    font-size: 18px;
+  }
+  .edit_btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@scope (.edit_btn) {
+  a {
+    display: block;
+    width: 18px;
+    margin-left: 10px;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+  }
+}
+/* -------------------------------------------------------- */
+.card_box {
+}
+@scope (.card_box) {
+  li {
+    display: block;
+    width: 500px;
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(rgb(71, 71, 71), 0.1);
+  }
+}
+
+@scope (.card_box > li) {
+  h1,
+  h2,
+  a,
+  div {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji";
+  }
+  h1.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  h2.description {
+    color: #7f7f7f;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #888;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  a:hover {
+    color: #3d638a;
+    font-weight: bold;
+  }
+  .star_box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    font-weight: bold;
+    color: #888;
+  }
+}
+
+@scope (.star_box) {
+  img.star_icon {
+    display: block;
+    width: 20px;
+    margin-right: 4px;
+  }
+}
+
+/* -------------------------------------------------------- */
+.loading {
+  width: 100%;
+}
+.lds_ellipsis {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+.lds_ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #888;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds_ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds_ellipsis1 0.6s infinite;
+}
+.lds_ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds_ellipsis2 0.6s infinite;
+}
+.lds_ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds_ellipsis2 0.6s infinite;
+}
+.lds_ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds_ellipsis3 0.6s infinite;
+}
+@keyframes lds_ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds_ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds_ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.hide {
+  display: none;
+}
+.show-block {
+  display: block;
+}
+.show-flax {
+  display: flex;
+}
