@@ -1,27 +1,27 @@
 import "../assets/css/style.css";
 import { fetchUserData, fetchRepos } from "../composables/useFetchData";
-import { useRenderRef } from "../composables/useRenderRef";
+import { useUiManager } from "../composables/useUiManager";
 
 let editNameText = "MikeCheng1208";
 
 let page = 0;
 
-const { uiRef, infoRef } = useRenderRef();
+const { elRef, createUserInfo } = useUiManager();
 
-const { handleRef, userInfo } = infoRef();
+const { handleRef, userInfo } = createUserInfo();
 
-uiRef.titleInput.addEventListener("input", (e) => {
+elRef.titleInput.addEventListener("input", (e) => {
   if (!e.target) return;
   editNameText = (e.target as HTMLInputElement).value;
 });
 
 // 切換搜尋名字
-uiRef.editPenBtn.addEventListener("click", () => {
+elRef.editPenBtn.addEventListener("click", () => {
   handleRef.toggleUserSearchState();
 });
 
 // 送出搜尋
-uiRef.searchBtn.addEventListener("click", () => {
+elRef.searchBtn.addEventListener("click", () => {
   handleRef.toggleUserSearchState();
   page = 0;
   handleRef.resetReopsList();
@@ -29,7 +29,7 @@ uiRef.searchBtn.addEventListener("click", () => {
 });
 
 // 取消搜尋
-uiRef.closeBtn.addEventListener("click", () => {
+elRef.closeBtn.addEventListener("click", () => {
   handleRef.toggleUserSearchState();
 });
 
@@ -52,7 +52,7 @@ const intersectionObserver = new IntersectionObserver((entries) => {
   fetchReposList(editNameText);
 });
 // 監聽 loading 元件
-intersectionObserver.observe(uiRef.loading);
+intersectionObserver.observe(elRef.loading);
 
 // 初始化
 const init = async (name: string) => {

@@ -1,4 +1,4 @@
-const getDomRef = () => {
+const getElements = () => {
   const avatar = document.querySelector(".avatar") as HTMLImageElement;
   const titleName = document.querySelector(".title_name") as HTMLHeadingElement;
   const titleInput = document.querySelector(".title_input") as HTMLInputElement;
@@ -21,10 +21,12 @@ const getDomRef = () => {
   };
 };
 
-export const useRenderRef = () => {
-  const { loading, avatar, titleName, titleInput, editPenBtn, editBoxBtn, searchBtn, closeBtn, cardBox } = getDomRef();
+export const useUiManager = () => {
 
-  const infoRef = () => {
+  const { loading, avatar, titleName, titleInput, editPenBtn, editBoxBtn, searchBtn, closeBtn, cardBox } = getElements();
+
+  const createUserInfo = () => {
+
     const userInfo: TfetchUserDataType = {
       userName: "",
       avatarUrl: "",
@@ -42,7 +44,7 @@ export const useRenderRef = () => {
       setAvatar() {
         avatar.src = userInfo.avatarUrl;
       },
-      titleInput() {
+      setTitleInput() {
         titleInput.value = userInfo.userName;
       },
       renderCard(reopsList: TApiReopsRes[]) {
@@ -66,7 +68,7 @@ export const useRenderRef = () => {
       },
       toggleEdit() {
         titleInput.classList.toggle("hide");
-        this.titleInput();
+        this.setTitleInput();
       },
       toggleEditIcon() {
         editPenBtn.classList.toggle("hide");
@@ -98,7 +100,7 @@ export const useRenderRef = () => {
   };
 
   return {
-    uiRef: {
+    elRef: {
       avatar,
       titleName,
       titleInput,
@@ -109,6 +111,6 @@ export const useRenderRef = () => {
       cardBox,
       loading,
     },
-    infoRef,
+    createUserInfo,
   };
 };
