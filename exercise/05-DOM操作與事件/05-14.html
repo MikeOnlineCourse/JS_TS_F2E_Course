@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>常用的 window.innerWidth</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/05-13.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="fly"></div>
+    </div>
+    <script>
+      const fly = document.querySelector("#fly");
+      let mouseX = 0;
+      let mouseY = 0;
+      let isDown = false;
+
+      window.addEventListener("mousedown", function (e) {
+        isDown = true;
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+        fly.style.top = `${mouseY}px`;
+        fly.style.left = `${mouseX}px`;
+      });
+
+      window.addEventListener("mouseover", function (e) {
+        if (isDown) {
+          mouseX = e.pageX;
+          mouseY = e.pageY;
+          fly.style.top = `${mouseY}px`;
+          fly.style.left = `${mouseX}px`;
+        }
+      });
+
+      window.addEventListener("mouseup", function (e) {
+        isDown = false;
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+        fly.style.top = `${mouseY}px`;
+        fly.style.left = `${mouseX}px`;
+      });
+    </script>
+  </body>
+</html>

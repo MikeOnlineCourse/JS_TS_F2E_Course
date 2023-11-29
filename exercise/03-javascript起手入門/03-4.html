@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>什麼是 DOM 與載入順序還有 onload 事件</title>
+    <style>
+      img {
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../images/bg.jpg" alt="" />
+    <script>
+      alert(1);
+      alert(2);
+      alert(3);
+    </script>
+  </body>
+</html>

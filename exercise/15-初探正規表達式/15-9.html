@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>常見的正規表達式與使用方式</title>
+  </head>
+  <body>
+    <script>
+      // 檢查字串只能有文字與數字
+      const checkOnlyStringNumber = (str) => {
+        const reg = /^[a-zA-Z0-9]+$/;
+        return reg.test(str);
+      };
+
+      // 檢查字串只能有文字
+      const checkOnlyString = (str) => {
+        const reg = /^[a-zA-Z]+$/;
+        return reg.test(str);
+      };
+
+      // 檢查字串只能有數字
+      const checkOnlyNumber = (str) => {
+        const reg = /^[0-9]+$/;
+        return reg.test(str);
+      };
+
+      // 檢查日期型態 (MM/DD/YYYY)
+      const checkDate = (str) => {
+        const reg = /^(0[1-9]|1[012])\/(0[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}$/;
+        return reg.test(str);
+      };
+
+      // 檢查日期型態 (YYYY/MM/DD)
+      const checkDate2 = (str) => {
+        const reg = /^(19|20)\d{2}\/(0[1-9]|1[012])\/(0[1-9]|[12][0-9]|3[01])$/;
+        return reg.test(str);
+      };
+
+      // Email檢查
+      const checkEmail = (str) => {
+        const reg = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/;
+        return reg.test(str);
+      };
+
+      // 檢查IP位址
+      const checkIP = (str) => {
+        const reg =
+          /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$/;
+        return reg.test(str);
+      };
+
+      // 檢查密碼：密碼長度必須有八碼，並且包含至少一個小寫字母與一個大寫字母和一個數字
+      const checkPassword = (str) => {
+        const reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+        return reg.test(str);
+      };
+
+      // 檢查網址
+      const checkURL = (str) => {
+        const reg =
+          /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
+        return reg.test(str);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>計時器進階組合( 播放、暫停、重新 )</title>
+    <link rel="stylesheet" href="./css/08-3.css" />
+  </head>
+  <body>
+    <div>
+      <h1 id="timeTxt">0</h1>
+      <div class="btn">
+        <a id="play" class="">播放</a>
+        <a id="stop">暫停</a>
+        <a id="reset">重新</a>
+      </div>
+    </div>
+
+    <script>
+      const timeTxt = document.getElementById("timeTxt");
+      const play = document.getElementById("play");
+      const stop = document.getElementById("stop");
+      const reset = document.getElementById("reset");
+
+      play.addEventListener("click", playFn);
+      stop.addEventListener("click", stopFn);
+      reset.addEventListener("click", resetFn);
+
+      function playFn() {}
+
+      function stopFn() {}
+
+      function resetFn() {}
+    </script>
+  </body>
+</html>

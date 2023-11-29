@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>http 狀態碼</title>
+  </head>
+  <body>
+    <!-- https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Status -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script>
+      // https://vue-lessons-api.vercel.app/city/list
+      axios
+        .get("http://www.mocky.io/v2/5cc40dbe34000077007654af")
+        .then((res) => {
+          console.log("拿到資料:", res.data);
+        })
+        .catch((error) => {
+          alert(error.response.data.msg);
+          console.error("發生錯誤 狀態碼不是200:", error.response.data.msg);
+        });
+    </script>
+  </body>
+</html>

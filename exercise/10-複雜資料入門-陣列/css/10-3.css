@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+    font-family: "Microsoft JhengHei","Heiti TC","sans-serif";
+}
+
+#app{
+    position: relative;
+    width: 320px;
+    height: 213px;
+}
+
+a#angleleft, a#angleright{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 40px;
+    height: 80px;
+    margin-top: -40px;
+}
+a#angleleft{
+    left: -50px;
+}
+
+a#angleright{
+    right: -50px;
+}
+h2#pagination{
+    text-align: center;
+}

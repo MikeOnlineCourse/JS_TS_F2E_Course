@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: "Microsoft JhengHei","Heiti TC","sans-serif";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/bg2.jpg");
+    background-size: cover;
+    background-position: 50% 0%;
+}
+li{
+    list-style-type: none;
+}
+#app{
+    width: 500px;
+}
+#app > ul.tit{
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+#app > ul.tit > li{
+    width: 25%;
+    line-height: 30px;
+    float: left;
+    color: #000;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+ul.tit2{
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(256, 256, 256, 0.6);
+}
+ul.tit2 > li{
+    width: 25%;
+    line-height: 30px;
+    float: left;
+    color: #000;
+    text-align: center;
+    border: 1px solid #000;
+    font-size: 12px;
+}
+ul.tit_select{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+ul.tit_select > li{
+    display: block;
+    width: 25%;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    color: #000;
+    text-align: center;
+    font-size: 12px;
+}
+ul.tit_select > li > select{
+    display: block;
+    width: 90%;
+    height: 100%;
+    border: 0;
+    margin: 0 auto;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "vite-ts-tsconfig",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build --emptyOutDir",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.200",
+    "eslint": "^8.52.0",
+    "typescript": "^5.0.2",
+    "vite": "^5.0.0",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "axios": "^1.6.0",
+    "eslint-plugin-import": "^2.29.0",
+    "lodash": "^4.17.21",
+    "swiper": "^11.0.3"
+  }
+}

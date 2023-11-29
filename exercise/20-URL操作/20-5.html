@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History API 入門</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../images/bg/12.jpg");
+        background-size: cover;
+        background-position: center bottom;
+      }
+      #app {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+      }
+      button {
+        padding: 3px 10px;
+        width: 220px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 4px #00000053;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button id="back">上一頁</button>
+      <button id="addName">加入 name 參數</button>
+      <button id="addAge">加入 age 參數</button>
+      <button id="addPageIdx">加入 pageIdx 參數</button>
+      <button id="forward">下一頁</button>
+    </div>
+    <script>
+      /**
+        window.history.go(-1); // 等於 history.back()
+        window.history.go(1);  // 等於 history.forward()
+        window.history.go(-3); // 回到三頁之前
+        window.history.go(0);  // 瀏覽器會重新整理目前的頁面
+        window.history.pushState({}, null, pathname);  // 會有歷史記錄
+        window.history.replaceState({}, null, pathname); // 不會有歷史記錄
+      */
+
+      const back = document.querySelector("#back");
+      const addName = document.querySelector("#addName");
+      const addAge = document.querySelector("#addAge");
+      const addPageIdx = document.querySelector("#addPageIdx");
+      const forward = document.querySelector("#forward");
+      const pathname = window.location.pathname;
+
+      back.addEventListener("click", () => {});
+
+      addName.addEventListener("click", () => {});
+
+      addAge.addEventListener("click", () => {});
+
+      addPageIdx.addEventListener("click", () => {});
+
+      forward.addEventListener("click", () => {});
+    </script>
+  </body>
+</html>

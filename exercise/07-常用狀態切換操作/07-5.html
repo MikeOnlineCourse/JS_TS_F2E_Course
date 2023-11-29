@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>選取狀態切換更升級</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/07-5.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="left">
+        <div>
+          <img id="logo" src="../images/logo2.png" alt="" />
+          <ul class="navBox">
+            <li><a id="n1" class="nav active">首頁 > </a></li>
+            <li><a id="n2" class="nav">關於我們 > </a></li>
+            <li><a id="n3" class="nav">連絡客服 > </a></li>
+            <li><a id="n4" class="nav">最新課程 > </a></li>
+            <li><a id="n5" class="nav">最新消息 > </a></li>
+            <li><a id="n6" class="nav">課程公告 > </a></li>
+            <li><a id="n7" class="nav">成為老師 > </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="right">
+        <div id="p1" class="page"># 首頁</div>
+        <div id="p2" class="page"># 關於我們</div>
+        <div id="p3" class="page"># 連絡客服</div>
+        <div id="p4" class="page"># 最新課程</div>
+        <div id="p5" class="page"># 最新消息</div>
+        <div id="p6" class="page"># 課程公告</div>
+        <div id="p7" class="page"># 成為老師</div>
+      </div>
+    </div>
+
+    <script>
+      const navBtn = document.querySelectorAll(".nav");
+      const page = document.querySelectorAll(".page");
+
+      page[0].style.display = "flex";
+    </script>
+  </body>
+</html>

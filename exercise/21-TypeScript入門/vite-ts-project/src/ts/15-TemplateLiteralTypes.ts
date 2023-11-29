@@ -1,0 +1,1 @@
+type TColor = "black" | "white" | "yellow" | "pink";

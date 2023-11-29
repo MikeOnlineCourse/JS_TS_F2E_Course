@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>github public repo page</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- select input -->
+      <div class="user_title">
+        <img class="avatar" src="" alt="" />
+        <div class="edit_box">
+          <h1 class="title_name">
+            <!-- {{ userName }} -->
+          </h1>
+          <input class="title_input hide" type="text" />
+          <div class="edit_btn">
+            <!-- 編輯 -->
+            <a class="edit_pen_btn" href="javascript:;" @click="handEditNameFn">
+              <img width="25px" height="25px" src="../assets/edit.svg" alt="" />
+            </a>
+            <!-- 關閉跟確認 -->
+            <div class="edit_box_btn hide">
+              <a class="search_btn" href="javascript:;" @click="handSeachTextFn">
+                <img width="25px" height="25px" src="../assets/check-mark.svg" alt="" />
+              </a>
+              <a class="close_btn" href="javascript:;" @click="closeEditFn">
+                <img width="25px" height="25px" src="../assets/cancel-button.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card -->
+      <ul class="card_box">
+        <!-- <li>
+          <h1 class="title"></h1>
+          <h2 class="description"></h2>
+          <a class="url" href="" target="_blank"></a>
+          <div class="star_box">
+            <img class="star_icon" src="../assets/star.svg" alt="" />
+          </div>
+        </li> -->
+      </ul>
+
+      <!-- loading -->
+      <div class="loading lds_ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script type="module" src="./ts/main.ts"></script>
+  </body>
+</html>

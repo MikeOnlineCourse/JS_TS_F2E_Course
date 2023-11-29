@@ -1,0 +1,1 @@
+// 使用映射型別 (Mapped Types)

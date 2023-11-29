@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Microsoft JhengHei","Heiti TC","sans-serif";
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-position: 50% 0%;
+}
+input{
+    display: block;
+    width: 400px;
+    height: 30px;
+}
+
+button{
+    display: block;
+    width: 100px;
+    height: 30px;
+    margin: 10px auto 0 auto;
+}
+
+h1{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    line-height: 50px;
+}
