@@ -18,6 +18,13 @@
         <a id="fontSizeNormal_btn" href="javascript:;">正常</a>
       </div>
     </div>
-    <script></script>
+    <script>
+      const title = document.querySelector("#title");
+      const fontSizeBig_btn = document.querySelector("#fontSizeBig_btn");
+
+      fontSizeBig_btn.addEventListener("click", function () {
+        title.style.fontSize = "150px";
+      });
+    </script>
   </body>
 </html>

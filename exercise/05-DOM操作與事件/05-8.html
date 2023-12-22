@@ -18,6 +18,28 @@
         <a id="fontSizeNormal_btn" href="javascript:;">正常</a>
       </div>
     </div>
-    <script></script>
+    <script>
+      const title = document.querySelector("#title");
+
+      const fontSizeBig_btn = document.querySelector("#fontSizeBig_btn");
+
+      const fontSizeSmall_btn = document.querySelector("#fontSizeSmall_btn");
+
+      const fontSizeNormal_btn = document.querySelector("#fontSizeNormal_btn");
+
+      function handleFontSizeBig() {
+        title.style.fontSize = "200px";
+      }
+      function handleFontSizeSmall() {
+        title.style.fontSize = "20px";
+      }
+      function handleFontSizeNormal() {
+        title.style.fontSize = "80px";
+      }
+
+      fontSizeBig_btn.addEventListener("click", handleFontSizeBig);
+      fontSizeSmall_btn.addEventListener("click", handleFontSizeSmall);
+      fontSizeNormal_btn.addEventListener("click", handleFontSizeNormal);
+    </script>
   </body>
 </html>
