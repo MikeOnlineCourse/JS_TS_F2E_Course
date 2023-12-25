@@ -14,26 +14,20 @@
     </div>
     <script>
       const fly = document.querySelector("#fly");
-      let mouseX = 0;
-      let mouseY = 0;
       let isDown = false;
 
       window.addEventListener("mousedown", function (e) {
         isDown = true;
-        mouseX = e.pageX;
-        mouseY = e.pageY;
-        fly.style.top = `${mouseY}px`;
-        fly.style.left = `${mouseX}px`;
+        fly.style.top = `${e.pageY}px`;
+        fly.style.left = `${e.pageX}px`;
       });
 
       window.addEventListener("mouseover", function (e) {
         // const ww = window.innerWidth / 2;
         if (isDown) {
           const ww = window.innerWidth / 2; // 看你要在那個時間點取得
-          mouseX = e.pageX;
-          mouseY = e.pageY;
-          fly.style.top = `${mouseY}px`;
-          fly.style.left = `${mouseX}px`;
+          fly.style.top = `${e.pageY}px`;
+          fly.style.left = `${e.pageX}px`;
           if (e.pageX < ww) {
             fly.style.transform = "translate(-50%, -50%) scaleX(-1) ";
           }
@@ -45,10 +39,8 @@
 
       window.addEventListener("mouseup", function (e) {
         isDown = false;
-        mouseX = e.pageX;
-        mouseY = e.pageY;
-        fly.style.top = `${mouseY}px`;
-        fly.style.left = `${mouseX}px`;
+        fly.style.top = `${e.pageY}px`;
+        fly.style.left = `${e.pageX}px`;
       });
     </script>
   </body>
