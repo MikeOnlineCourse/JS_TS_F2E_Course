@@ -16,10 +16,10 @@
     <script>
       const app = document.getElementById("app");
       let html = "";
-      const bigNum = 51;
-      for (let i = 0; i < bigNum; i++) {
+      const bigNum = 50;
+      for (let i = 1; i < bigNum; i++) {
         html += `
-          <div id="a${i}" class="Ball" style="border-radius:${i}px;">${i}</div>;
+          <div class="Ball" style="border-radius: ${i}px">${i}</div>
         `;
       }
       app.innerHTML = html;
