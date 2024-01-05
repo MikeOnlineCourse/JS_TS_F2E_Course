@@ -37,9 +37,15 @@
 
     <script>
       const navBtn = document.querySelectorAll(".nav");
-      const page = document.querySelectorAll(".page");
 
-      page[0].style.display = "flex";
+      for (let i = 0; i < navBtn.length; i++) {
+        navBtn[i].addEventListener("click", (e) => {
+          for (let s = 0; s < navBtn.length; s++) {
+            navBtn[s].classList.remove("active");
+          }
+          e.target.classList.add("active");
+        });
+      }
     </script>
   </body>
 </html>
