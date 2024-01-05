@@ -79,3 +79,7 @@ ul.navBox > li > a.nav.active {
   border-left: 20px solid lightcoral;
   font-size: 26px;
 }
+
+.show {
+  display: flex !important;
+}

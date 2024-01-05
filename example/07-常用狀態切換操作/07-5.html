@@ -40,17 +40,17 @@
       const page = document.querySelectorAll(".page");
       let pageIdx = 0;
 
-      page[0].style.display = "flex";
+      page[0].classList.add("show");
 
       for (let i = 0; i < navBtn.length; i++) {
         navBtn[i].addEventListener("click", (e) => {
           for (let s = 0; s < navBtn.length; s++) {
             navBtn[s].classList.remove("active");
-            page[s].style.display = "none";
+            page[s].classList.remove("show");
           }
           e.target.classList.add("active");
           pageIdx = Number(e.target.id.substr(1));
-          page[pageIdx - 1].style.display = "flex";
+          page[pageIdx - 1].classList.add("show");
         });
       }
     </script>
