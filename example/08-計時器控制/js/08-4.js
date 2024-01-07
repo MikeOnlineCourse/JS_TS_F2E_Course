@@ -16,7 +16,7 @@ window.onload = () => {
 
   function showPhoto() {
     pageidx = Number(this.id.substr(1));
-    phone.style.backgroundImage = 'url("../images/05/big/' + this.id + '.jpg")';
+    phone.style.backgroundImage = `url("../images/08/big/${this.id}.jpg")`;
     reset();
     clearInterval(time);
     timeGo();
@@ -28,7 +28,7 @@ window.onload = () => {
       if (pageidx > 5) {
         pageidx = 1;
       }
-      phone.style.backgroundImage = `url("../images/05/big/a${pageidx}.jpg")`;
+      phone.style.backgroundImage = `url("../images/08/big/a${pageidx}.jpg")`;
       reset();
     }, 3000);
   }
