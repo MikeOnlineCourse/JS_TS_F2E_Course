@@ -46,6 +46,7 @@
 
       function resetFn() {
         play.removeEventListener("click", playFn);
+        stop.removeEventListener("click", stopFn);
         time = 0;
         timeTxt.innerText = time;
         resetActive();
@@ -54,6 +55,7 @@
         setTimeout(() => {
           resetActive();
           play.addEventListener("click", playFn);
+          stop.addEventListener("click", stopFn);
         }, 1500);
       }
 
