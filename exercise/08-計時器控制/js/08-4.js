@@ -4,7 +4,7 @@ window.onload = () => {
   const a3 = document.querySelector("#a3");
   const a4 = document.querySelector("#a4");
   const a5 = document.querySelector("#a5");
-  const phone = document.querySelector("#contentPhone");
+  const photo = document.querySelector("#contentPhoto");
 
   a1.addEventListener("click", showPhoto);
   a2.addEventListener("click", showPhoto);

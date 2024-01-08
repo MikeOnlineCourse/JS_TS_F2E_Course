@@ -6,7 +6,7 @@ window.onload = () => {
   const a3 = document.querySelector("#a3");
   const a4 = document.querySelector("#a4");
   const a5 = document.querySelector("#a5");
-  const phone = document.querySelector("#contentPhone");
+  const photo = document.querySelector("#contentPhoto");
 
   a1.addEventListener("click", showPhoto);
   a2.addEventListener("click", showPhoto);
@@ -16,7 +16,7 @@ window.onload = () => {
 
   function showPhoto() {
     pageidx = Number(this.id.substr(1));
-    phone.style.backgroundImage = `url("../images/08/big/${this.id}.jpg")`;
+    photo.style.backgroundImage = `url("../images/08/big/${this.id}.jpg")`;
     reset();
     clearInterval(time);
     timeGo();
@@ -28,7 +28,7 @@ window.onload = () => {
       if (pageidx > 5) {
         pageidx = 1;
       }
-      phone.style.backgroundImage = `url("../images/08/big/a${pageidx}.jpg")`;
+      photo.style.backgroundImage = `url("../images/08/big/a${pageidx}.jpg")`;
       reset();
     }, 3000);
   }
