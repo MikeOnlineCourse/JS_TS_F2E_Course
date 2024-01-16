@@ -84,7 +84,7 @@
       let html = "";
 
       // DOM 元素的操作
-      function DOMrender() {
+      const DOMrender = () => {
         html = "";
         seach_list.innerHTML = "";
         for (let i = 0; i < seachObj.length; i++) {
@@ -97,7 +97,7 @@
           `;
         }
         seach_list.innerHTML = html;
-      }
+      };
 
       //點擊標籤
       for (let s = 0; s < tag.length; s++) {
@@ -105,15 +105,15 @@
       }
 
       // 更改點到的資料
-      function seachTagChange() {
-        seachObj = seachData[this.innerText];
+      function seachTagChange(e) {
+        seachObj = seachData[e.target.innerText];
         seach.value = this.innerText;
         DOMrender();
       }
 
       //鍵盤事件
-      seach.addEventListener("keyup", function () {
-        seachObj = seachData[this.value];
+      seach.addEventListener("keyup", (e) => {
+        seachObj = seachData[e.target.value];
         if (seachObj === undefined) {
           seachObj = [];
         }
