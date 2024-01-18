@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>陣列進階操作 forEach()</title>
+    <title>陣列進階操作 filter()</title>
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/02-11.css" />
   </head>
@@ -58,75 +58,68 @@
       const user_money = document.querySelector("#user_money");
       const user_age = document.querySelector("#user_age");
       const user_sex = document.querySelector("#user_sex");
-      const newData = data;
       let html = "";
+      const newData = data;
 
-      //畫面渲染
-      function DOMReader(arr) {
+      function renderDOM(newArr) {
         html = "";
-        itemList.innerHTML = "";
-        arr.forEach((obj) => {
+        newArr.forEach((item) => {
           html += `
             <ul class="tit2">
-                <li>${obj.name}</li>
-                <li>${obj.money}</li>
-                <li>${obj.age}</li>
-                <li>${obj.sex}</li>
+                <li>${item.name}</li>
+                <li>${item.money}</li>
+                <li>${item.age}</li>
+                <li>${item.sex}</li>
             </ul>
           `;
         });
         itemList.innerHTML = html;
       }
 
-      // 選擇錢的處理
-      function userMoney(value) {
-        const m = Number(value);
-        const arr = [];
-        newData.forEach((obj) => {
-          if (obj.money > m) {
-            arr.push(obj);
-          }
-        });
-        DOMReader(arr);
-      }
+      renderDOM(newData);
 
-      // 選擇年齡的處理
-      function userAge(value) {
-        const m = Number(value);
+      function filterMoney(data) {
+        const money = Number(data);
         const arr = [];
-        newData.forEach((obj) => {
-          if (obj.age > m) {
-            arr.push(obj);
+        newData.forEach((item) => {
+          if (item.money > money) {
+            arr.push(item);
           }
         });
-        DOMReader(arr);
+        renderDOM(arr);
       }
-
-      // 選擇性別的處理
-      function userSex(value) {
+      function filterAge(data) {
+        const age = Number(data);
         const arr = [];
-        newData.forEach((obj) => {
-          if (obj.sex === value) {
-            arr.push(obj);
-          }
-          if (value === "no") {
-            arr.push(obj);
+        newData.forEach((item) => {
+          if (item.age > age) {
+            arr.push(item);
           }
         });
-        DOMReader(arr);
+        renderDOM(arr);
+      }
+      function filterSex(data) {
+        let arr = [];
+        newData.forEach((item) => {
+          if (item.sex === data) {
+            arr.push(item);
+          }
+          if (data === "no") {
+            arr = newData;
+          }
+        });
+        renderDOM(arr);
       }
 
       user_money.addEventListener("change", (e) => {
-        userMoney(e.target.value);
+        filterMoney(e.target.value);
       });
       user_age.addEventListener("change", (e) => {
-        userAge(e.target.value);
+        filterAge(e.target.value);
       });
       user_sex.addEventListener("change", (e) => {
-        userSex(e.target.value);
+        filterSex(e.target.value);
       });
-
-      DOMReader(newData);
     </script>
   </body>
 </html>
