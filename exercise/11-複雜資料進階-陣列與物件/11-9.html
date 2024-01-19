@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>陣列進階操作 every() </title>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/02-13.css">
-</head>
-<body>
-    
-    <div id="app">      
-        <h1>制度規章</h1> 
-        <form>
-            <div class="item">
-                <h3>● 規章一</h3>
-                <p>規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章!</p>
-                <input id="query1" type="checkbox" name="query1">
-                <label for="query1">你願意遵守以上規章?</label></br>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>陣列進階操作 every()</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/02-13.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>制度規章</h1>
+      <form>
+        <div class="item">
+          <h3>● 規章一</h3>
+          <p>
+            規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章!
+          </p>
+          <input id="query1" type="checkbox" name="query1" />
+          <label for="query1">你願意遵守以上規章?</label>
+        </div>
 
-            <div class="item">
-                <h3>● 規章二</h3>
-                <p>規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章!</p>
-                <input id="query2" type="checkbox" name="query2">
-                <label for="query2">你願意遵守以上規章?</label></br>
-            </div>
+        <div class="item">
+          <h3>● 規章二</h3>
+          <p>
+            規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章!
+          </p>
+          <input id="query2" type="checkbox" name="query2" />
+          <label for="query2">你願意遵守以上規章?</label>
+        </div>
 
-            <div class="item">
-                <h3>● 規章三</h3>
-                <p>規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章!</p>
-                <input id="query3" type="checkbox" name="query3">
-                <label for="query3">你願意遵守以上規章?</label></br>
-            </div>
+        <div class="item">
+          <h3>● 規章三</h3>
+          <p>
+            規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章規章!
+          </p>
+          <input id="query3" type="checkbox" name="query3" />
+          <label for="query3">你願意遵守以上規章?</label>
+        </div>
 
-            <button id="submit">送出</button>
-        </form>
+        <button disabled id="submit">送出</button>
+      </form>
     </div>
     <script>
+      const submit = document.querySelector("#submit");
 
-        const submit = document.querySelector("#submit");
+      document.querySelector("#query1").addEventListener("change", changeFn);
+      document.querySelector("#query2").addEventListener("change", changeFn);
+      document.querySelector("#query3").addEventListener("change", changeFn);
 
+      function changeFn() {}
+
+      submit.addEventListener("click", () => {
+        alert("送出成功");
+      });
     </script>
-
-
-</body>
+  </body>
 </html>
