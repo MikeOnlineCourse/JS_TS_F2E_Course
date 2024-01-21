@@ -62,10 +62,10 @@
       let html = "";
 
       //畫面渲染
-      function DOMrender() {
+      function DOMrender(arr) {
         html = "";
         itemList.innerHTML = "";
-        newData.forEach((item) => {
+        arr.forEach((item) => {
           html += `
             <ul class="tit2">
               <li>${item.name}</li>
@@ -85,7 +85,7 @@
       user_age.addEventListener("change", (e) => {});
       user_sex.addEventListener("change", (e) => {});
 
-      DOMrender();
+      DOMrender(newData);
     </script>
   </body>
 </html>
