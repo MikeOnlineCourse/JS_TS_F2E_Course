@@ -66,10 +66,10 @@
       let isSex = "no";
 
       //畫面渲染
-      function DOMrender() {
+      function DOMrender(arr) {
         html = "";
         itemList.innerHTML = "";
-        newData.forEach((item) => {
+        arr.forEach((item) => {
           html += `
             <ul class="tit2">
               <li>${item.name}</li>
@@ -95,8 +95,7 @@
             break;
         }
 
-        newData = [];
-        newData = data
+        const filterData = newData
           .filter((item) => {
             return item.money > isMoney;
           })
@@ -107,7 +106,7 @@
             if (isSex === "no") return item;
             return item.sex === isSex;
           });
-        DOMrender();
+        DOMrender(filterData);
       }
 
       user_money.addEventListener("change", (e) => {
@@ -120,7 +119,7 @@
         SeachData(e.target.value, "sex");
       });
 
-      DOMrender();
+      DOMrender(newData);
     </script>
   </body>
 </html>
