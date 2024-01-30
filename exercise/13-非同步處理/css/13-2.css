@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Microsoft JhengHei", "Heiti TC", "sans-serif";
+  background-image: url("../../images/bg/7.jpg");
 }
 
 #app {
@@ -21,6 +22,9 @@ body {
 }
 h1 {
   text-align: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  padding: 5px 0;
 }
 input {
   display: block;
