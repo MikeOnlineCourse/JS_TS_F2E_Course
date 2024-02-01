@@ -6,6 +6,15 @@
     <title>?? 空值合併運算符</title>
   </head>
   <body>
-    <script></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+
+    <script>
+      axios.get("https://vue-lessons-api.vercel.app/city/list").then((res) => {
+        const twzip = res.data.twzip;
+        const jpzip = res.data.jpzip;
+        console.log(twzip);
+        console.log(jpzip);
+      });
+    </script>
   </body>
 </html>
