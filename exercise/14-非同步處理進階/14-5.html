@@ -3,16 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>初始化多個 API 執行處理方式 1 - Promise.all</title>
+    <title>try catch 的錯誤處理</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
   </head>
   <body>
     <script>
-      // axios.get("https://vue-lessons-api.vercel.app/photo/list")
-      // axios.get("https://vue-lessons-api.vercel.app/seo/home")
-      // axios.get("https://www.mocky.io/v2/5cc3f5723400005d00765480")
-
-      const init = () => {};
+      const init = async () => {
+        const res = await axios.get(
+          "http://www.mocky.io/v2/5cc40dbe34000077007654af"
+        );
+        console.log(res.data);
+      };
 
       init();
     </script>

@@ -3,33 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>什麼是 async / await? 把非同步變成同步</title>
+    <title>平常開發常見的 Promise</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
   </head>
   <body>
     <script>
-      const init1 = () => {
-        console.log(1);
-        axios
-          .get("https://vue-lessons-api.vercel.app/city/list")
-          .then((res) => {
-            console.log(2);
-            console.log("拿到資料:", res.data);
-          });
-        console.log(3);
-      };
+      // axios 回傳是 Promise 物件
+      axios
+        .get("https://vue-lessons-api.vercel.app/city/list")
+        .then((res) => {
+          console.log("拿到資料:", res.data);
+        })
+        .catch((error) => {
+          alert(error.response.data.msg);
+          console.error("發生錯誤 狀態碼不是200:", error.response.data.msg);
+        });
 
-      const init2 = async () => {
-        console.log(1);
-        const res = await axios.get(
-          "https://vue-lessons-api.vercel.app/city/list"
-        );
-        console.log(2);
-        console.log("拿到資料:", res.data);
-      };
-
-      init1();
-      // init2();
+      // fetch 回傳是 Promise 物件
+      fetch("https://vue-lessons-api.vercel.app/city/list", {
+        method: "GET",
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(`error:`, error);
+        });
     </script>
   </body>
 </html>

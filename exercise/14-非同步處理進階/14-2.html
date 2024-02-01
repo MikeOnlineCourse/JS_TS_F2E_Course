@@ -3,35 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>平常開發常見的 Promise</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <title>實際 Promise 案例</title>
   </head>
+  <style>
+    img {
+      width: 800px;
+    }
+  </style>
   <body>
     <script>
-      // axios 回傳是 Promise 物件
-      axios
-        .get("https://vue-lessons-api.vercel.app/city/list")
-        .then((res) => {
-          console.log("拿到資料:", res.data);
-        })
-        .catch((error) => {
-          alert(error.response.data.msg);
-          console.error("發生錯誤 狀態碼不是200:", error.response.data.msg);
-        });
+      const img =
+        "https://ik.imagekit.io/thecodingpro/mike-school/tr:w-1920,c-at_max/o/web%2F1701877845.jpg?alt=media&token=c54b2697-dd91-44f3-a109-7da4c2cf4c30";
 
-      // fetch 回傳是 Promise 物件
-      fetch("https://vue-lessons-api.vercel.app/city/list", {
-        method: "GET",
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(`error:`, error);
-        });
+      function loadImage(url, callback) {}
+
+      loadImage(img, (error, image) => {
+        if (error) {
+          console.error(error);
+          return;
+        }
+        document.body.appendChild(image);
+      });
     </script>
   </body>
 </html>
