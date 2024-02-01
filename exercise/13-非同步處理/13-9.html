@@ -15,7 +15,7 @@
       axios
         .get("https://vue-lessons-api.vercel.app/city/list")
         .then((res) => {
-          console.log("拿到資料 1:", res.data);
+          console.log("拿到資料 1:", res);
         })
         .catch((error) => {
           console.error("發生錯誤 1 狀態碼不是 200:", error.response.data.msg);
@@ -24,7 +24,7 @@
       axios
         .get("http://www.mocky.io/v2/5cc40dbe34000077007654af")
         .then((res) => {
-          console.log("拿到資料 2:", res.data);
+          console.log("拿到資料 2:", res);
         })
         .catch((error) => {
           console.error("發生錯誤 2 狀態碼不是 200:", error.response.data.msg);
