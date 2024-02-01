@@ -18,7 +18,6 @@
           console.log("拿到資料 1:", res.data);
         })
         .catch((error) => {
-          alert(error.response.data.msg);
           console.error("發生錯誤 1 狀態碼不是 200:", error.response.data.msg);
         });
 
@@ -28,7 +27,6 @@
           console.log("拿到資料 2:", res.data);
         })
         .catch((error) => {
-          alert(error.response.data.msg);
           console.error("發生錯誤 2 狀態碼不是 200:", error.response.data.msg);
         });
     </script>
