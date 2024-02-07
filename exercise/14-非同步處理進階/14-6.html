@@ -8,11 +8,13 @@
   </head>
   <body>
     <script>
-      // axios.get("https://vue-lessons-api.vercel.app/photo/list")
-      // axios.get("https://vue-lessons-api.vercel.app/seo/home")
-      // axios.get("https://vue-lessons-api.vercel.app/city/list")
+      const init = async () => {
+        await axios.get("https://vue-lessons-api.vercel.app/photo/list");
+        await axios.get("https://vue-lessons-api.vercel.app/seo/home");
+        await axios.get("https://vue-lessons-api.vercel.app/city/list");
 
-      const init = () => {};
+        console.log("執行其他動作");
+      };
 
       init();
     </script>
