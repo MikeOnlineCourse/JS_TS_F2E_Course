@@ -6,6 +6,11 @@
  *  sex: string
  *  age: string
  *  terms: boolean
+ * 
+ * {
+    value: "",
+    error: "",
+  }
  */
 
 // input
