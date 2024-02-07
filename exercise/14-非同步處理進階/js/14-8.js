@@ -1,11 +1,11 @@
 /**
  * API https://vue-lessons-api.vercel.app/auth/registered
- *  username
- *  password
- *  email
- *  sex
- *  age
- *  terms
+ *  username: string
+ *  password: string
+ *  email: string
+ *  sex: string
+ *  age: string
+ *  terms: boolean
  */
 
 // input
