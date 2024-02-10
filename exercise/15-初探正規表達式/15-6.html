@@ -20,21 +20,21 @@
         "wayair",
         "habit",
       ];
-      // 匹配任何開頭為air 的字串
+      // 匹配任何開頭為 air 的字串
       // const regexStart =
       const strfilter = strArr.filter((item) => {
         return regexStart.test(item);
       });
       console.log("Start:", strfilter); // -> ['airline', 'airplane']
 
-      // 匹配任何結尾為er 的字串
+      // 匹配任何結尾為 er 的字串
       // const regexEnd =
       const endfilter = strArr.filter((item) => {
         return regexEnd.test(item);
       });
       console.log("End:", endfilter); // -> ['banner']
 
-      // 匹配任何開頭是a結尾是e然後中間不管是英文或是數字的字串
+      // 匹配任何開頭是 a 結尾是 e 然後中間不管是英文或是數字的字串
       // const regexMid =
       const midfilter = strArr.filter((item) => {
         return regexMid.test(item);
