@@ -5,7 +5,7 @@ const localstorage = {
     localStorage.setItem(key, JSON.stringify(data));
   },
   get: (key) => {
-    JSON.parse(localStorage.getItem(key));
+    return JSON.parse(localStorage.getItem(key));
   },
   remove: (key) => {
     if (key === "all") {
