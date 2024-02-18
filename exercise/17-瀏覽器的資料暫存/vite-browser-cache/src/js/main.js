@@ -4,17 +4,7 @@ import axios from "axios";
 import { useGetRef } from "./utils/useGetRef.js";
 import { info, parseReq } from "./utils/useInputData.js";
 
-const {
-  username,
-  password,
-  usernameError,
-  passwordError,
-  terms,
-  btn,
-  loginPage,
-  successPage,
-  logup,
-} = useGetRef();
+const { username, password, usernameError, passwordError, terms, btn, loginPage, successPage, logup } = useGetRef();
 
 let isLogin = false;
 
@@ -31,6 +21,9 @@ const errorMessageShow = () => {
 };
 
 const checkPageStatus = () => {
+  // 檢查登入資料
+  const infoData = null;
+
   if (infoData) {
     loginPage.classList.add("hidden");
     successPage.classList.remove("hidden");
@@ -42,10 +35,7 @@ const checkPageStatus = () => {
 
 const sendLogin = async (req) => {
   try {
-    const res = await axios.post(
-      "https://vue-lessons-api.vercel.app/auth/login",
-      req
-    );
+    const res = await axios.post("https://vue-lessons-api.vercel.app/auth/login", req);
     return res.data;
   } catch (err) {
     const errorRes = err.response.data.error_message;
