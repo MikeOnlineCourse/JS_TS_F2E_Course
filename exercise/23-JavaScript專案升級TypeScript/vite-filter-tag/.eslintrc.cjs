@@ -38,6 +38,12 @@ module.exports = {
     "implicit-arrow-linebreak": "off",
 
     // https://github.com/import-js/eslint-plugin-import/blob/v2.28.1/docs/rules/no-extraneous-dependencies.md
-    "import/no-extraneous-dependencies": ["error", { devDependencies: ["vite.config.js"] }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { devDependencies: ["vite.config.js"] },
+    ],
+
+    // https://stackoverflow.com/questions/37826449/expected-linebreaks-to-be-lf-but-found-crlf-linebreak-style
+    "linebreak-style": ["off", "windows"],
   },
 };

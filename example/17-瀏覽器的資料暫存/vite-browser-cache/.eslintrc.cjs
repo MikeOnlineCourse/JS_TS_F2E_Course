@@ -40,5 +40,8 @@ module.exports = {
 
     // https://eslint.org/docs/latest/rules/consistent-return
     "consistent-return": ["error", { treatUndefinedAsUnspecified: true }],
+
+    // https://stackoverflow.com/questions/37826449/expected-linebreaks-to-be-lf-but-found-crlf-linebreak-style
+    "linebreak-style": ["off", "windows"],
   },
 };

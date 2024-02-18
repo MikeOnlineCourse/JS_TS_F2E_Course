@@ -52,5 +52,8 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     // 關閉 ignore ( https://typescript-eslint.io/rules/ban-ts-comment/ )
     "@typescript-eslint/ban-ts-comment": "off",
+
+    // https://stackoverflow.com/questions/37826449/expected-linebreaks-to-be-lf-but-found-crlf-linebreak-style
+    "linebreak-style": ["off", "windows"],
   },
 };
