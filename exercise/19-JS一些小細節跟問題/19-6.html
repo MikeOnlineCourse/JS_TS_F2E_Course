@@ -59,15 +59,14 @@
       <input class="inpTxt" type="text" placeholder="請填入名字" />
       <button class="send">送出</button>
     </div>
-    <!-- https://jsxss.com/zh/index.html -->
+    <!-- https://jsxss.com/en/index.html -->
     <script src="https://rawgit.com/leizongmin/js-xss/master/dist/xss.js"></script>
     <script>
       const sendRef = document.querySelector(".send");
       const titleRef = document.querySelector(".title");
       sendRef.addEventListener("click", () => {
         const inputValue = document.querySelector(".inpTxt").value;
-        // titleRef.innerHTML = inputValue;
-        titleRef.innerHTML = filterXSS(inputValue);
+        titleRef.innerHTML = inputValue;
       });
     </script>
   </body>
