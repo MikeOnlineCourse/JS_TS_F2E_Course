@@ -63,22 +63,21 @@
       const addAge = document.querySelector("#addAge");
       const addPageIdx = document.querySelector("#addPageIdx");
       const forward = document.querySelector("#forward");
-      const pathname = window.location.pathname;
 
       back.addEventListener("click", () => {
         window.history.go(-1);
       });
 
       addName.addEventListener("click", () => {
-        window.history.pushState({}, null, `${pathname}?name=mike`);
+        window.history.pushState({}, null, "?name=mike");
       });
 
       addAge.addEventListener("click", () => {
-        window.history.pushState({}, null, `${pathname}?age=12`);
+        window.history.pushState({}, null, "?age=12");
       });
 
       addPageIdx.addEventListener("click", () => {
-        window.history.pushState({}, null, `${pathname}?pageIdx=4`);
+        window.history.pushState({}, null, "?pageIdx=4");
       });
 
       forward.addEventListener("click", () => {
