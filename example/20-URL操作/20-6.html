@@ -63,7 +63,6 @@
       const addAge = document.querySelector("#addAge");
       const addPageIdx = document.querySelector("#addPageIdx");
       const forward = document.querySelector("#forward");
-      const pathname = window.location.pathname;
       let age = 10;
 
       const getParams = () => {
@@ -85,7 +84,7 @@
 
       const routerQueryPush = (params) => {
         const query = queryParse(params);
-        window.history.pushState({}, null, `${pathname}${query}`);
+        window.history.pushState({}, null, query);
       };
 
       back.addEventListener("click", () => {
