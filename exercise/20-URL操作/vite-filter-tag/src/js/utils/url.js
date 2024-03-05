@@ -18,10 +18,18 @@ const queryParse = (query) => {
 const parseFindNewQuery = (params, fist) => {};
 
 // 添加 query 參數 push
-const routerQueryPush = (params) => {};
+const routerQueryPush = (params) => {
+  const { pathname } = window.location;
+  const query = queryParse(params);
+  window.history.pushState({}, null, `${pathname}${query}`);
+};
 
 // 添加 query 參數 replace
-const routerQueryReplace = (params) => {};
+const routerQueryReplace = (params) => {
+  const { pathname } = window.location;
+  const query = queryParse(params);
+  window.history.replaceState({}, null, `${pathname}${query}`);
+};
 
 // 刪除 query 參數 push
 const routerQueryRemove = (params) => {};

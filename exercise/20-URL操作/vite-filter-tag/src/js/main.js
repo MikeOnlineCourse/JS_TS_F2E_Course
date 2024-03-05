@@ -19,10 +19,32 @@ let tagsChildHtml = "";
 let productsHtml = "";
 
 // 產品列表渲染
-const productsRender = () => {};
+const productsRender = () => {
+  productsHtml = "";
+  if (productsArr.length === 0) {
+    productsHtml = "<h1 class='no_data'>目前尚無任何資料</h1>";
+  } else {
+    productsArr.forEach((item) => {
+      productsHtml += `
+        <div class="card">
+          <h1>${item.title}</h1>
+          <a href="${item.url}" target="_blank">${item.url}</a>
+          <p>${item.content}</p>
+        </div>
+      `;
+    });
+  }
+  content.innerHTML = productsHtml;
+
+  // return Promise
+};
 
 // 抓取產品資料
-const fetchProducts = async () => {};
+const fetchProducts = async () => {
+  const params = {};
+  const res = await apiGetTagsProduct(params);
+  productsArr = res.data;
+};
 
 // 第二層選單渲染
 const tagChildRender = () => {};
