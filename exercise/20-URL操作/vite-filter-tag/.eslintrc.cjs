@@ -19,6 +19,7 @@ module.exports = {
   // 規則說明 ( https://eslint.org/docs/latest/use/configure/rules )
   // 所有的規則 ( https://eslint.org/docs/latest/rules/ )
   rules: {
+    "no-unused-vars": "off",
     "no-console": "off",
     "no-promise-executor-return": "off",
     "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
