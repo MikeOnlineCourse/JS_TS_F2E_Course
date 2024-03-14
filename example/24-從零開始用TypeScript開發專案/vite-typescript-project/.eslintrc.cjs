@@ -45,5 +45,8 @@ module.exports = {
     "@typescript-eslint/ban-ts-comment": "off",
     // https://typescript-eslint.io/rules/consistent-type-definitions/
     "@typescript-eslint/consistent-type-definitions": "off",
+
+    // https://stackoverflow.com/questions/37826449/expected-linebreaks-to-be-lf-but-found-crlf-linebreak-style
+    "linebreak-style": ["off", "windows"],
   },
 };

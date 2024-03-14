@@ -46,11 +46,17 @@ module.exports = {
     "implicit-arrow-linebreak": "off",
 
     // https://github.com/import-js/eslint-plugin-import/blob/v2.28.1/docs/rules/no-extraneous-dependencies.md
-    "import/no-extraneous-dependencies": ["error", { devDependencies: ["vite.config.ts"] }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { devDependencies: ["vite.config.ts"] },
+    ],
 
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "off",
     // 關閉any ( https://typescript-eslint.io/rules/no-explicit-any/ )
     "@typescript-eslint/no-explicit-any": "off",
+
+    // https://stackoverflow.com/questions/37826449/expected-linebreaks-to-be-lf-but-found-crlf-linebreak-style
+    "linebreak-style": ["off", "windows"],
   },
 };
