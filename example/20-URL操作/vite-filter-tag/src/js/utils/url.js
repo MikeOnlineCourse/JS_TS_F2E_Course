@@ -18,14 +18,13 @@ const queryParse = (query) => {
 const parseFindNewQuery = (params, fist) => {
   const { search } = window.location;
   const query = getParams().get(params);
-  const qParse = queryParse(`${params}=${query}`);
   let newQuery = "";
   if (search[fist - 1] === "&") {
-    newQuery = qParse.replace(`${search[fist - 1]}${params}=${query}`, "");
+    newQuery = search.replace(`${search[fist - 1]}${params}=${query}`, "");
   }
   if (search[fist - 1] === "?") {
     const str = !search.includes("&") ? `?${params}=${query}` : `${params}=${query}&`;
-    newQuery = qParse.replace(str, "");
+    newQuery = search.replace(str, "");
   }
   return newQuery;
 };
