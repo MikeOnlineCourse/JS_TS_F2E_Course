@@ -24,11 +24,11 @@ const res = await apiRequest<TPhotoList[]>("https://vue-lessons-api.vercel.app/p
 console.log("API await=>", res.data);
 
 
-axios.get<TPhotoList[]>("https://vue-lessons-api.vercel.app/photo/list").then((res) => {
+axios.get<TPhotoList[]>("https://vue-lessons-api.vercel.app/photo/list").then((res: AxiosResponse<TPhotoList[]>) => {
   console.log("axios=>", res.data);
 });
 
-function apiGetPhotoList(): Promise<AxiosResponse<TPhotoList>> {
+function apiGetPhotoList(): Promise<AxiosResponse<TPhotoList[]>> {
   return axios.get("https://vue-lessons-api.vercel.app/photo/list");
 }
 
