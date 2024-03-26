@@ -4,3 +4,7 @@ type TUserDataInfo = {
   address: string;
 };
 
+const user1: TUserDataInfo = {
+  name: "Mike",
+  age: 12,
+};
