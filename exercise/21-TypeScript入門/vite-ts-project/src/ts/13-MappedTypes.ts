@@ -3,8 +3,7 @@
 const lolState = {
     Offline: "離線",
     Online: "在線",
-    leave: "離開",
-    nostate: "不存在"
+    leave: "離開"
 }
 
 
